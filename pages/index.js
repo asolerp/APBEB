@@ -10,16 +10,18 @@ const useStyles = makeStyles(theme => ({
     height: '100%',
     width: '100%',
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center'
   },
-  title: {
+  homeLeft: {
     display: 'flex',
-    flexDirection: 'column',
+    flex: 1,
+    background: theme.palette.primary.main
+  },
+  homeRight: {
+    display: 'flex',
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    fontFamily: 'Montserrat'
+    background: theme.palette.secondary.main
   }
 }));
 
@@ -27,7 +29,10 @@ const Home = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <h1>Blank Proyect</h1>
+      <div className={classes.homeLeft}></div>
+      <div className={classes.homeRight}>
+        <img src="static/images/zapato.png" style={{ width: '500px', objectFit: 'contain' }}/>
+      </div>
     </div>
   )
 }

@@ -21,8 +21,11 @@ import Footer from '../components/Footer'
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#ffffff",
+      main: "#EAE1DA",
     },
+    secondary: {
+      main: "#F8F4F1"
+    }
   },
 });
 
