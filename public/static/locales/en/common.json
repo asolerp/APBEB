@@ -1,0 +1,45 @@
+{
+  "menu": {
+    "about": "About Us",
+    "coworking": "Coworking",
+    "where": "Where we are",
+    "contact": "Contact"
+  },
+  "header":  {
+    "title": "The best space for your work",
+    "subtitle_1": "coworking",
+    "subtitle_2": "networking",
+    "contact": "Contact"
+  },
+  "about": {
+    "title":"Community, creativity, confort & much more",
+    "subtitle": "About Us",
+    "text": "World has changed, jobs has changed. Our coworking stems from the need to be able to choose the place and the time you want to work.",
+    "areas": "Areas",
+    "indepe": "Independent"
+  },
+  "where": {
+    "title":"In one of the most exclusive areas of mallorca",
+    "subtitle": "LOCATION",
+    "email": {
+      "title": "Email"
+    },
+    "address": {
+      "title": "Address"
+    }
+  }, 
+  "services": {
+    "sala": "Meeting room",
+    "wifi": "High speed wifi",
+    "areas": "Various spaces"
+  },
+  "contact": {
+    "name": "Complete name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send",
+    "success": "Message has sent successfully",
+    "error": "Something wrong... try later"
+  }
+}
