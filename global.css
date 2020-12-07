@@ -1,7 +1,15 @@
+  * {
+    box-sizing: border-box;
+  }
+
   html,
   body {
     height: 100%;
   }
+
+ol, ul {
+  list-style: none;
+}
 
 .wrapper {
   height: 100vh;
@@ -21,6 +29,7 @@
 .content {
   display: flex;
   flex: 10;
+  background-color: #EAE1DA;
 }
 
 .footer {

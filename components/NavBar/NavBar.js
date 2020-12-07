@@ -1,33 +1,34 @@
-import React from 'react';
+import React from 'react'
 
-import { makeStyles } from '@material-ui/core/styles';
-
+import { makeStyles } from '@material-ui/core/styles'
+import { Typography } from '@material-ui/core'
+import Menu from '../Menu'
+import Link from 'next/link'
 
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
-    height: '100%',
     display: 'flex',
-    justifyContent: 'center'
+    paddingLeft: '140px',
+    paddingRight: '115px',
+    marginTop: '1%'
   },
-  title: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    fontFamily: 'Montserrat'
+  logo: {
+    fontWeight: 'bold',
+    cursor: 'pointer'
   }
-}));
-
+}))
 
 const NavBar = () => {
-  const classes = useStyles();
-    return (
-        <div className={classes.root}>
-          <h1>NAVBAR</h1>
-        </div>
-    )
+  const classes = useStyles()
+  return (
+        <nav className={classes.root}>
+          <Link href="/">
+            <Typography variant="h2" className={classes.logo}>APBEB</Typography>
+          </Link>
+          <Menu />
+        </nav>
+  )
 }
-
 
 export default NavBar

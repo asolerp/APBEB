@@ -5,7 +5,6 @@ import { withTranslation } from '../i18n'
 
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
-import Social from '../components/Social/Social'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,20 +15,13 @@ const useStyles = makeStyles(theme => ({
   homeLeft: {
     display: 'flex',
     flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'flex-start'
+    justifyContent: 'flex-start',
+    alignItems: 'center'
   },
   title: {
-    display: 'flex',
-    flex: 10,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
     width: '60%',
-    fontSize: '4.5rem',
-    fontWeight: '400',
-    paddingLeft: '140px',
-    marginTop: '5rem'
+    fontSize: '5.5rem',
+    fontWeight: '400'
   },
   homeRight: {
     display: 'flex',
@@ -44,27 +36,26 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Home = ({ t }) => {
+const About = ({ t }) => {
   const classes = useStyles()
   return (
     <div className={classes.root}>
       <div className={classes.homeLeft}>
         <Typography variant="h1" className={classes.title}>{t('home.title')}</Typography>
-        <Social />
       </div>
       <div className={classes.homeRight}>
-        <img src="static/images/zapato.png" alt="wedding" className={classes.homeImage}/>
+        <img src="static/images/zapato.png" className={classes.homeImage}/>
       </div>
     </div>
   )
 }
 
-Home.propTypes = {
+About.propTypes = {
   t: PropTypes.any
 }
 
-Home.getInitialProps = async () => ({
+About.getInitialProps = async () => ({
   namespacesRequired: ['common']
 })
 
-export default withTranslation('common')(Home)
+export default withTranslation('common')(About)

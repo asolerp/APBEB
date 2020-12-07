@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@material-ui/core": "latest",
+    "classnames": "^2.2.6",
     "emailjs-com": "^2.6.3",
     "next": "^9.5.5",
     "next-i18next": "^6.0.3",
@@ -24,5 +25,13 @@
     "react-scroll-to": "^3.0.0-beta.6",
     "react-transition-group": "^4.4.1",
     "sass": "^1.27.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.21.5"
   }
 }
