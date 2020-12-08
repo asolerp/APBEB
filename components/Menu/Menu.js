@@ -1,12 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 
 import { makeStyles } from '@material-ui/core/styles'
 import { Box, Typography } from '@material-ui/core'
 
-import { isActive } from '../../utils/general'
+// Utils
+import { isActive, handleClick } from '../../utils/general'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -32,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Menu = () => {
+const Menu = ({ handleAnimation }) => {
   const classes = useStyles()
   const router = useRouter()
 
@@ -40,9 +41,7 @@ const Menu = () => {
     <ul className={classes.root}>
       <li>
         <Box mr={3}>
-          <Link href="/about">
-            <Typography variant="h6" className={`${classes.menuSection} ${isActive(router, '/about') ? classes.menuSectionActive : ''}`}>QUIENES SOMOS</Typography>
-          </Link>
+          <Typography onClick={() => handleClick('/about', handleAnimation, router)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/about') ? classes.menuSectionActive : ''}`}>QUIENES SOMOS</Typography>
         </Box>
       </li>
       <li>
@@ -62,6 +61,10 @@ const Menu = () => {
       </li>
     </ul>
   )
+}
+
+Menu.propTypes = {
+  handleAnimation: PropTypes.any
 }
 
 export default Menu

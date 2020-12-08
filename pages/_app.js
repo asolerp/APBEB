@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Container } from 'next/app'
 import PropTypes from 'prop-types'
 
@@ -11,7 +11,8 @@ import { DefaultSeo } from 'next-seo'
 import { isActive } from '../utils/general'
 
 // Design
-import '../global.css'
+import '../css/global.css'
+import '../css/TransitionPage.css'
 import { createMuiTheme } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { ThemeProvider } from '@material-ui/styles'
@@ -52,13 +53,7 @@ const theme = createMuiTheme({
 
 const MyApp = ({ Component, pageProps }) => {
   const router = useRouter()
-  const [active, setActive] = useState(false)
-
-  useEffect(() => {
-    setTimeout(() => {
-      setActive(true)
-    }, 1000)
-  }, [])
+  const [animationStatus, setAnimationStatus] = useState(false)
 
   return (
     <Container>
@@ -66,10 +61,10 @@ const MyApp = ({ Component, pageProps }) => {
       <Head title="Blank | Blank Project with i18n" />
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <TransitionPage active={active} />
+          <TransitionPage active={animationStatus} />
           <div className="wrapper">
             <div className="navbar">
-              <NavBar />
+              <NavBar handleAnimation={setAnimationStatus} />
             </div>
             <div className="content">
               <Component {...pageProps} />

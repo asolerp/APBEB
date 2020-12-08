@@ -1,22 +1,29 @@
+import React from 'react'
 import { Transition } from 'react-transition-group'
 import { makeStyles } from '@material-ui/core/styles'
-import { Typography } from '@material-ui/core'
 
-const duration = 100
+import { withTranslation } from '../../i18n'
+
+const duration = 1000
 
 const defaultStyle = {
   position: 'absolute',
   zIndex: 2,
   transition: `all ${duration}ms ease-in-out`,
+  transform: 'translateY(-100%)',
   width: '100vw',
-  background: '#925D56'
+  height: '100vh',
+  background: '#925D56',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
 }
 
 const transitionStyles = {
-  entering: { height: '100vh' },
-  entered: { height: '0vh' },
-  exiting: { height: '0vh' },
-  exited: { height: '0vh' }
+  entering: { transform: 'translateY(0%)' },
+  entered: { transform: 'translateY(0%)' },
+  exiting: { transform: 'translateY(-100%)' },
+  exited: { transform: 'translateY(-100%)' }
 }
 
 const useStyles = makeStyles(theme => ({
@@ -25,35 +32,41 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     display: 'flex'
   },
-  title: {
-    display: 'flex',
-    flex: 10,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    width: '60%',
-    fontSize: '4.5rem',
-    fontWeight: '400',
-    paddingLeft: '140px',
-    marginTop: '5rem'
+  logo: {
+    fontWeight: 'bold',
+    cursor: 'pointer',
+    color: 'white',
+    opacity: 1,
+    width: '50px',
+    transition: 'opacity 1s'
+  },
+  logoDisabled: {
+    opacity: 0,
+    fontWeight: 'bold',
+    cursor: 'pointer',
+    color: 'white',
+    width: '50px',
+    transition: 'all .4s'
   }
 }))
 
-const TransitionPage = ({ active }) => {
+const TransitionPage = ({ t, active }) => {
   const classes = useStyles()
-
   return (
-  <Transition in={active } timeout={duration}>
+    <Transition
+      in={active }
+      timeout={duration}
+      >
     {state => (
       <div style={{
         ...defaultStyle,
         ...transitionStyles[state]
       }}>
-        <Typography variant="h1" className={classes.title}>{t('home.title')}</Typography>
-
+        <img src="/static/images/white_ring.png" className={classes.logo}></img>
       </div>
     )}
   </Transition>
   )
 }
 
-export default TransitionPage
+export default withTranslation('common')(TransitionPage)

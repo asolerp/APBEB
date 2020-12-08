@@ -41,7 +41,7 @@ const About = ({ t }) => {
   return (
     <div className={classes.root}>
       <div className={classes.homeLeft}>
-        <Typography variant="h1" className={classes.title}>{t('home.title')}</Typography>
+        <Typography variant="h1" className={classes.title}>ABOUT</Typography>
       </div>
       <div className={classes.homeRight}>
         <img src="static/images/zapato.png" className={classes.homeImage}/>
