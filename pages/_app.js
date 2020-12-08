@@ -72,7 +72,7 @@ const MyApp = ({ Component, pageProps }) => {
             {
               !isActive(router, '/') && (
                 <div className="footer">
-                  <Footer />
+                  <Footer handleAnimation={setAnimationStatus}/>
                 </div>
               )
             }

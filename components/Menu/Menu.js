@@ -41,22 +41,22 @@ const Menu = ({ handleAnimation }) => {
     <ul className={classes.root}>
       <li>
         <Box mr={3}>
-          <Typography onClick={() => handleClick('/about', handleAnimation, router)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/about') ? classes.menuSectionActive : ''}`}>QUIENES SOMOS</Typography>
+          <Typography onClick={() => handleClick('/about', handleAnimation, router)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/about') ? classes.menuSectionActive : ''}`}>Quines somos</Typography>
         </Box>
       </li>
       <li>
         <Box mr={3}>
-          <Typography onClick={() => handleClick('/asociados', handleAnimation, router)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/asociados') ? classes.menuSectionActive : ''}`}>ASOCIADOS</Typography>
+          <Typography onClick={() => handleClick('/asociados', handleAnimation, router)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/asociados') ? classes.menuSectionActive : ''}`}>Asociados</Typography>
         </Box>
       </li>
       <li>
         <Box mr={3}>
-          <Typography variant="h6" className={classes.menuSection}>NOTICIAS</Typography>
+          <Typography variant="h6" className={classes.menuSection}>Noticias</Typography>
         </Box>
       </li>
       <li>
         <Box>
-          <Typography variant="h6" className={classes.menuSection}>CONTACTA</Typography>
+          <Typography variant="h6" className={classes.menuSection}>Contacta</Typography>
         </Box>
       </li>
     </ul>

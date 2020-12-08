@@ -51,7 +51,7 @@ const Home = ({ t }) => {
     <div className={classes.root}>
       <div className={classes.homeLeft}>
         <Typography variant="h1" className={classes.title}>{t('home.title')}</Typography>
-        <Social />
+        <Social footer={true}/>
       </div>
       <div className={classes.homeRight}>
         <img src="static/images/zapato.png" alt="wedding" className={classes.homeImage}/>

@@ -10,7 +10,7 @@ const defaultStyle = {
   position: 'absolute',
   zIndex: 2,
   transition: `all ${duration}ms ease-in-out`,
-  transform: 'translateY(-100%)',
+  top: '-100%',
   width: '100vw',
   height: '100vh',
   background: '#925D56',
@@ -20,10 +20,10 @@ const defaultStyle = {
 }
 
 const transitionStyles = {
-  entering: { transform: 'translateY(0%)' },
-  entered: { transform: 'translateY(0%)' },
-  exiting: { transform: 'translateY(-100%)' },
-  exited: { transform: 'translateY(-100%)' }
+  entering: { top: '0' },
+  entered: { top: '0' },
+  exiting: { top: '-100%' },
+  exited: { top: '-100%' }
 }
 
 const useStyles = makeStyles(theme => ({
