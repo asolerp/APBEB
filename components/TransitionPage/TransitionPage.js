@@ -1,35 +1,59 @@
 import { Transition } from 'react-transition-group'
+import { makeStyles } from '@material-ui/core/styles'
+import { Typography } from '@material-ui/core'
 
-const duration = 300
+const duration = 100
 
 const defaultStyle = {
   position: 'absolute',
-  zIdenx: 100,
-  transition: `opacity ${duration}ms ease-in-out`,
-  height: '100vh',
+  zIndex: 2,
+  transition: `all ${duration}ms ease-in-out`,
   width: '100vw',
-  background: '#925D56',
-  opacity: 0
+  background: '#925D56'
 }
 
 const transitionStyles = {
-  entering: { opacity: 1 },
-  entered: { opacity: 1 },
-  exiting: { opacity: 0 },
-  exited: { opacity: 0 }
+  entering: { height: '100vh' },
+  entered: { height: '0vh' },
+  exiting: { height: '0vh' },
+  exited: { height: '0vh' }
 }
 
-const TransitionPage = ({ active }) => (
+const useStyles = makeStyles(theme => ({
+  root: {
+    height: '100%',
+    width: '100%',
+    display: 'flex'
+  },
+  title: {
+    display: 'flex',
+    flex: 10,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    width: '60%',
+    fontSize: '4.5rem',
+    fontWeight: '400',
+    paddingLeft: '140px',
+    marginTop: '5rem'
+  }
+}))
+
+const TransitionPage = ({ active }) => {
+  const classes = useStyles()
+
+  return (
   <Transition in={active } timeout={duration}>
     {state => (
       <div style={{
         ...defaultStyle,
         ...transitionStyles[state]
       }}>
-        I'm a fade Transition!
+        <Typography variant="h1" className={classes.title}>{t('home.title')}</Typography>
+
       </div>
     )}
   </Transition>
-)
+  )
+}
 
 export default TransitionPage

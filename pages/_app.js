@@ -66,7 +66,7 @@ const MyApp = ({ Component, pageProps }) => {
       <Head title="Blank | Blank Project with i18n" />
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          {/* <TransitionPage active={active} /> */}
+          <TransitionPage active={active} />
           <div className="wrapper">
             <div className="navbar">
               <NavBar />
