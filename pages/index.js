@@ -18,7 +18,8 @@ const useStyles = makeStyles(theme => ({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+    backgroundColor: theme.palette.primary.main
   },
   title: {
     display: 'flex',

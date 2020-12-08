@@ -46,7 +46,7 @@ const Menu = ({ handleAnimation }) => {
       </li>
       <li>
         <Box mr={3}>
-          <Typography variant="h6" className={classes.menuSection}>ASOCIADOS</Typography>
+          <Typography onClick={() => handleClick('/asociados', handleAnimation, router)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/asociados') ? classes.menuSectionActive : ''}`}>ASOCIADOS</Typography>
         </Box>
       </li>
       <li>
