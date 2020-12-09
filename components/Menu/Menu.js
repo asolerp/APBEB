@@ -51,7 +51,7 @@ const Menu = ({ handleAnimation }) => {
       </li>
       <li>
         <Box mr={3}>
-          <Typography variant="h6" className={classes.menuSection}>Noticias</Typography>
+          <Typography onClick={() => handleClick('/noticias', handleAnimation, router)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/noticias') ? classes.menuSectionActive : ''}`}>Noticias</Typography>
         </Box>
       </li>
       <li>
