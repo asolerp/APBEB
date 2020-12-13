@@ -10,7 +10,7 @@ const defaultStyle = {
   position: 'absolute',
   zIndex: 2,
   transition: `all ${duration}ms ease-in-out`,
-  top: '-100%',
+  top: '-110%',
   width: '100vw',
   height: '100vh',
   background: '#925D56',
@@ -22,8 +22,8 @@ const defaultStyle = {
 const transitionStyles = {
   entering: { top: '0' },
   entered: { top: '0' },
-  exiting: { top: '-100%' },
-  exited: { top: '-100%' }
+  exiting: { top: '-110%' },
+  exited: { top: '-110%' }
 }
 
 const useStyles = makeStyles(theme => ({
@@ -56,6 +56,8 @@ const TransitionPage = ({ t, active }) => {
     <Transition
       in={active }
       timeout={duration}
+      onEnter={() => document.body.style.overflow = "hidden"}
+      onExit={() => document.body.style.overflow = "auto"}
       >
     {state => (
       <div style={{
