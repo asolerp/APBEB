@@ -7,6 +7,8 @@ export const handleClick = (href, handler, router) => {
   handler(true)
   setTimeout(() => {
     router.push(href)
+  }, 1500)
+  setTimeout(() => {
     handler(false)
-  }, 1000)
+  }, 2000)
 }
