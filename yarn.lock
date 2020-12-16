@@ -4275,6 +4275,11 @@ grid-index@^1.1.0:
   resolved "https://registry.yarnpkg.com/grid-index/-/grid-index-1.1.0.tgz#97f8221edec1026c8377b86446a7c71e79522ea7"
   integrity sha512-HZRwumpOGUrHyxO5bqKZL0B0GlUpwtCAzZ42sgxUPniu33R1LSFH5yrIcBCHjkctCAh3mtWKcKd9J4vDDdeVHA==
 
+hamburger-react@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/hamburger-react/-/hamburger-react-2.4.0.tgz#b2950fe28c4cf46b41e6887550140c3c17cb66a3"
+  integrity sha512-VYUhF7X9JszeHXSGHKJLaTIWPc/U64fVdcr4DTmOb04gOoJwricqi6gcRZXAylVtsJOs4CWtMVZNnWjXiWF0Xw==
+
 hammerjs@^2.0.8:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"

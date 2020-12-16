@@ -8,7 +8,10 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     alignItems: 'center',
     maxWidth: '300px',
-    marginBottom: '10%'
+    marginBottom: '10%',
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '20%'
+    }
   },
   avatarWrapper: {
     width: '200px',
@@ -32,7 +35,9 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '5%'
   },
   description: {
-
+    [theme.breakpoints.down('sm')]: {
+      textAlign: 'center'
+    }
   }
 }))
 

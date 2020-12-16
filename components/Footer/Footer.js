@@ -21,10 +21,16 @@ const useStyles = makeStyles(theme => ({
     padding: '5% 5%'
   },
   mb: {
-    marginBottom: '1%'
+    marginBottom: '1%',
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '5%'
+    }
   },
   footerItem: {
-    cursor: 'pointer'
+    cursor: 'pointer',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.5rem'
+    }
   }
 }))
 

@@ -40,6 +40,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: '5rem',
     [theme.breakpoints.down('sm')]: {
       fontSize: '3rem',
+      fontWeight: 'bold',
       paddingLeft: '2rem',
       width: '50%'
     }

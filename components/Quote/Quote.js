@@ -7,12 +7,21 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     marginBottom: '5%',
     justifyContent: 'center',
-    width: '100%'
+    width: '100%',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '40%',
+      marginBottom: '20%'
+    }
   },
   quote: {
     textAlign: 'center',
     maxWidth: '20%',
-    fontWeight: '700'
+    fontWeight: '700',
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: '100%',
+      fontSize: '1.5rem',
+      padding: '0 2rem'
+    }
   }
 }))
 

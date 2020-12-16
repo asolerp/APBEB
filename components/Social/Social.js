@@ -8,7 +8,11 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: '3%',
-    marginBottom: '3%'
+    marginBottom: '3%',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '10%',
+      marginBottom: '10%'
+    }
   },
   socialIcon: {
     width: '40px',

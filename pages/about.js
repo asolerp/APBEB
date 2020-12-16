@@ -20,7 +20,11 @@ const useStyles = makeStyles(theme => ({
   contentWrapper: {
     height: '100%',
     width: '100%',
-    display: 'flex'
+    display: 'flex',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      padding: '0 2rem'
+    }
   },
   homeLeft: {
     display: 'flex',
@@ -29,18 +33,28 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     textAlign: 'left',
-    paddingLeft: '140px'
+    paddingLeft: '140px',
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: '0',
+      marginBottom: '20%'
+    }
   },
   title: {
     textAlign: 'left',
     marginBottom: '3%',
     marginTop: '10%',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '10%'
+    }
   },
   description: {
     width: '70%',
     marginBottom: '3%',
-    fontWeight: 'normal'
+    fontWeight: 'normal',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%'
+    }
   },
   homeRight: {
     display: 'flex',
@@ -48,7 +62,13 @@ const useStyles = makeStyles(theme => ({
     flex: 1,
     height: '100vh',
     backgroundSize: 'cover',
-    backgroundImage: 'url(\'/static/images/flores.png\')'
+    backgroundImage: 'url(\'/static/images/flores.png\')',
+    [theme.breakpoints.down('sm')]: {
+      height: '50vh',
+      width: '100%',
+      flex: 'auto',
+      marginBottom: '20%'
+    }
   }
 }))
 
@@ -69,7 +89,8 @@ const About = ({ t }) => {
           <Typography variant="h6" className={classes.description}>
           Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?          </Typography>
         </div>
-        <div className={classes.homeRight}></div>
+        <div className={classes.homeRight}>
+        </div>
       </div>
     </div>
   )

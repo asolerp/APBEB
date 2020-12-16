@@ -20,7 +20,10 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-around',
     alignItems: 'flex-start',
     flexWrap: 'wrap',
-    margin: '0 auto'
+    margin: '0 auto',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%'
+    }
   },
   avatar: {
     width: '200px',
