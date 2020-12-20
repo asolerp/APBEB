@@ -43,7 +43,7 @@ const Footer = ({ handleAnimation }) => {
           <Typography onClick={() => handleClick('/about', handleAnimation, router)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Sobre Nosotross</Typography>
           <Typography onClick={() => handleClick('/asociados', handleAnimation, router)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Asociados</Typography>
           <Typography onClick={() => handleClick('/noticias', handleAnimation, router)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Noticias</Typography>
-          <Typography variant="subtitle1" className={`${classes.footerItem}`}>Contacta</Typography>
+          <Typography onClick={() => handleClick('/contacto', handleAnimation, router)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Contacto</Typography>
           <Social footer={true}/>
           <Typography variant="subtitle1" className={classes.mb}>Copyright APBEB</Typography>
           <Typography variant="subtitle1" className={classes.mb}>Diseñado y programado por Enalbis</Typography>

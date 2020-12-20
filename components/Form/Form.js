@@ -1,33 +1,45 @@
 import React from 'react'
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form'
 
 import { makeStyles } from '@material-ui/core/styles'
-
 
 import Input from '../Input'
 
 const useStyles = makeStyles(theme => ({
+  formWrapper: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column'
+    }
+  },
+  nameInput: {
+    flex: 1,
+    marginRight: '4rem',
+    [theme.breakpoints.down('sm')]: {
+      marginRight: '0rem'
+    }
+  },
   submit: {
     background: theme.palette.info.main,
     color: theme.palette.primary.main,
     padding: '1rem',
-    fontSize: '1.1rem', 
+    fontSize: '1.1rem',
     fontWeight: '700',
     border: 0
-  },
+  }
 }))
 
 const Form = () => {
-
   const classes = useStyles()
 
-  const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = data => console.log(data);
+  const { register, handleSubmit, watch, errors } = useForm()
+  const onSubmit = data => console.log(data)
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <div style={{ flex: 1, marginRight: '4rem' }}>
+      <div className={classes.formWrapper}>
+        <div className={classes.nameInput}>
           <Input label="Nombre" name="name" defaultValue="test" ref={register} />
         </div>
         <div style={{ flex: 1 }}>

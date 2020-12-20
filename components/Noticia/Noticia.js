@@ -12,12 +12,18 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     justifyContent: 'space-between',
     marginBottom: '2%',
-    marginTop: '2%'
+    marginTop: '2%',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column'
+    }
 
   },
   subtitle: {
     color: 'grey',
-    marginBottom: '2%'
+    marginBottom: '2%',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem'
+    }
   },
   title: {
     fontWeight: 'bold',
@@ -31,20 +37,26 @@ const useStyles = makeStyles(theme => ({
   image: {
     width: '600px',
     objectFit: 'contain',
-    borderRadius: '5px'
+    borderRadius: '5px',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%'
+    }
   }
 }))
 
 const ColorButton = withStyles((theme) => ({
   root: {
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '10%'
+    },
     color: theme.palette.info.main,
     backgroundColor: theme.palette.secondary.main,
     '&:hover': {
       color: theme.palette.secondary.main,
-      backgroundColor: theme.palette.info.main,
-    },
-  },
-}))(Button);
+      backgroundColor: theme.palette.info.main
+    }
+  }
+}))(Button)
 
 const Noticia = ({ noticia }) => {
   const classes = useStyles()
@@ -52,16 +64,16 @@ const Noticia = ({ noticia }) => {
   return (
         <div className={classes.root}>
             <div>
-             <Typography variant="h5" className={classes.subtitle}>{noticia.subtitle}</Typography>
-             <Typography variant="h5" className={classes.title}>{noticia.title}</Typography>
-             <Typography variant="body1" className={classes.text}>{noticia.text}</Typography>
-             <Link   
-              href={{
-                pathname: '/noticias/[slug]',
-                query: { slug: noticia.slug },
-              }}
-              // as={`/noticias/${noticia.slug}`}
-              >
+              <Typography variant="h5" className={classes.subtitle}>{noticia.subtitle}</Typography>
+              <Typography variant="h5" className={classes.title}>{noticia.title}</Typography>
+              <Typography variant="body1" className={classes.text}>{noticia.text}</Typography>
+              <Link
+                href={{
+                  pathname: '/noticias/[slug]',
+                  query: { slug: noticia.slug }
+                }}
+                // as={`/noticias/${noticia.slug}`}
+                >
                 <ColorButton variant="contained" color="primary">
                   Ver más
                 </ColorButton>

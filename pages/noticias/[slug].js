@@ -13,17 +13,26 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'flex-start',
     flexWrap: 'wrap',
     margin: '0 auto',
-    marginTop: '8%'
+    marginTop: '8%',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column'
+    }
   },
   noticia: {
     display: 'flex',
     flexDirection: 'column',
     flex: 1,
-    paddingLeft: '140px'
+    paddingLeft: '140px',
+    [theme.breakpoints.down('sm')]: {
+      padding: '0px 2rem'
+    }
   },
   subtitle: {
     color: 'grey',
-    marginBottom: '2%'
+    marginBottom: '2%',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem'
+    }
   },
   title: {
     textAlign: 'left',
@@ -33,7 +42,10 @@ const useStyles = makeStyles(theme => ({
   description: {
     width: '70%',
     marginBottom: '3%',
-    fontWeight: 'normal'
+    fontWeight: 'normal',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%'
+    }
   },
   entradas: {
     display: 'flex',
@@ -44,10 +56,12 @@ const useStyles = makeStyles(theme => ({
   },
   image: {
     width: '100%',
-    objectFit: 'contain'
+    objectFit: 'contain',
+    [theme.breakpoints.down('sm')]: {
+      margin: '10% 0% 15% 0%'
+    }
   }
 }))
-
 
 const NoticiaPage = () => {
   const classes = useStyles()

@@ -13,13 +13,20 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'flex-start',
     flexWrap: 'wrap',
     margin: '0 auto',
-    marginTop: '8%'
+    marginTop: '8%',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      padding: '0 2rem'
+    }
   },
   noticias: {
     display: 'flex',
     flexDirection: 'column',
     flex: 4,
-    paddingLeft: '140px'
+    paddingLeft: '140px',
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: '0px'
+    }
   },
   entradas: {
     paddingRight: '140px',
@@ -27,7 +34,13 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'flex-end',
-    flex: 1
+    flex: 1,
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      paddingRight: '0px',
+      justifyContent: 'flex-end',
+      marginBottom: '10%'
+    }
   },
   entradasTitle: {
     fontWeight: 'bold',
@@ -35,8 +48,17 @@ const useStyles = makeStyles(theme => ({
   },
   entradasMonth: {
     color: 'grey',
-    marginBottom: '2%'
+    marginBottom: '2%',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem'
+    }
   },
+  hr: {
+    width: '100%',
+    [theme.breakpoints.down('sm')]: {
+      margin: '10% 0'
+    }
+  }
 }))
 
 const noticia1 = {
@@ -54,12 +76,13 @@ const Noticias = () => {
             <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
             <div className={classes.noticias}>
                 <Noticia noticia={noticia1} />
-                <hr style={{ width: '100%' }}/>
+                <hr className={classes.hr}/>
                 <Noticia noticia={noticia1} />
-                <hr style={{ width: '100%' }}/>
+                <hr className={classes.hr}/>
                 <Noticia noticia={noticia1} />
-                <hr style={{ width: '100%' }}/>
+                <hr className={classes.hr}/>
                 <Noticia noticia={noticia1} />
+                <hr className={classes.hr}/>
             </div>
             <div className={classes.entradas}>
               <Typography variant="h5" className={classes.entradasTitle}>Entradas</Typography>

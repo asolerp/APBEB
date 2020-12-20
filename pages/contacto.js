@@ -16,7 +16,11 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    marginTop: '8%'
+    marginTop: '8%',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      padding: '0 2rem'
+    }
   },
   contentWrapper: {
     height: '75%',
@@ -27,7 +31,12 @@ const useStyles = makeStyles(theme => ({
     background: theme.palette.primary.main,
     margin: '0 auto',
     borderRadius: '10px',
-    marginBottom: '1%'
+    marginBottom: '1%',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      height: 'auto',
+      flexDirection: 'column'
+    }
   },
   contactLeft: {
     display: 'flex',
@@ -36,27 +45,28 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     alignItems: 'flex-start',
     textAlign: 'left',
-    paddingLeft: '140px'
+    paddingLeft: '140px',
+    [theme.breakpoints.down('sm')]: {
+      padding: '2rem 1rem'
+    }
   },
   message: {
     fontWeight: '700',
     width: '60%',
-    marginBottom: '1rem'
-  },
-  description: {
-    width: '60%',
-    fontWeight: '200',
-  },
-  title: {
-    textAlign: 'left',
-    marginBottom: '3%',
-    marginTop: '10%',
-    fontWeight: 'bold'
+    marginBottom: '1rem',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      fontSize: '1.5rem'
+    }
   },
   description: {
     width: '70%',
     marginBottom: '3%',
-    fontWeight: 'normal'
+    fontWeight: 'normal',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      fontSize: '1rem'
+    }
   },
   contactRight: {
     display: 'flex',
