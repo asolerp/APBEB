@@ -52,12 +52,16 @@ const useStyles = makeStyles(theme => ({
 
 const TransitionPage = ({ t, active }) => {
   const classes = useStyles()
+
   return (
     <Transition
       in={active }
       timeout={duration}
-      onEnter={() => document.body.style.overflow = "hidden"}
-      onExit={() => document.body.style.overflow = "auto"}
+      onEnter={() => {
+        document.body.style.overflow = 'hidden'
+        window.scrollTo(0, 0)
+      }}
+      onExit={() => document.body.style.overflow = 'auto'}
       >
     {state => (
       <div style={{

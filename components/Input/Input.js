@@ -14,11 +14,15 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '.5rem'
   },
   input: {
-    border: 0,
-    padding: '1.2rem',
+    border: '0',
+    padding: '1.5rem',
     fontSize: '1.5rem',
     fontFamily: 'Arial',
-    borderRadius: '2px'
+    borderRadius: '5px',
+    [theme.breakpoints.down('sm')]: {
+      padding: '1rem',
+      fontSize: '1rem'
+    }
   }
 }))
 
@@ -31,12 +35,12 @@ const Input = ({ type = 'input', label, name, ref }) => {
       {
         type === 'input' ? (
           <input className={classes.input} type='text' ref={ref} name={name} />
-        ) :
-        (
-          <textarea className={classes.input} name={name} ref={ref} rows={10} />
         )
+          : (
+          <textarea className={classes.input} name={name} ref={ref} rows={10} />
+            )
       }
-      
+
     </div>
   )
 }

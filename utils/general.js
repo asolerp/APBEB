@@ -3,7 +3,7 @@ export const isActive = (router, path) => {
 }
 
 export const handleClick = (href, handler, router) => {
-  window.scrollTo(0, 0)
+  window.scrollTo({ top: 0, behavior: 'smooth' })
   handler(true)
   setTimeout(() => {
     router.push(href)

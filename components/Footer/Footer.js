@@ -40,7 +40,7 @@ const Footer = ({ handleAnimation }) => {
 
   return (
         <div className={classes.root}>
-          <Typography onClick={() => handleClick('/about', handleAnimation, router)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Sobre Nosotross</Typography>
+          <Typography onClick={() => handleClick('/about', handleAnimation, router)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Sobre Nosotros</Typography>
           <Typography onClick={() => handleClick('/asociados', handleAnimation, router)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Asociados</Typography>
           <Typography onClick={() => handleClick('/noticias', handleAnimation, router)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Noticias</Typography>
           <Typography onClick={() => handleClick('/contacto', handleAnimation, router)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Contacto</Typography>

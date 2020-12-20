@@ -19,7 +19,8 @@ const useStyles = makeStyles(theme => ({
     marginTop: '8%',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
-      padding: '0 2rem'
+      padding: '0 2rem',
+      marginBottom: '5rem'
     }
   },
   contentWrapper: {
@@ -73,7 +74,11 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'center',
     flex: 1,
-    padding: '5rem'
+    padding: '5rem',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      padding: '2rem 1rem'
+    }
   }
 }))
 

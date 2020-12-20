@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Container } from 'next/app'
 import PropTypes from 'prop-types'
 
+import MenuContext from '../context/MenuContext'
+
 import { useRouter } from 'next/router'
 
 // Utils
@@ -22,6 +24,7 @@ import Head from '../components/Head'
 import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 import TransitionPage from '../components/TransitionPage'
+import MobileMenu from '../components/MobileMenu'
 
 const theme = createMuiTheme({
   typography: {
@@ -54,31 +57,37 @@ const theme = createMuiTheme({
 const MyApp = ({ Component, pageProps }) => {
   const router = useRouter()
   const [animationStatus, setAnimationStatus] = useState(false)
+  const [menuStatus, setMenuStatus] = useState(false)
+
+  const menu = useState(false)
 
   return (
-    <Container>
-      <DefaultSeo config={DEFAULT_SEO} />
-      <Head title="Blank | Blank Project with i18n" />
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <TransitionPage active={animationStatus} />
-          <div className="wrapper">
-            <div className="navbar">
-              <NavBar handleAnimation={setAnimationStatus} />
+    <MenuContext.Provider value={menu}>
+      <Container>
+        <DefaultSeo config={DEFAULT_SEO} />
+        <Head title="Blank | Blank Project with i18n" />
+          <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <TransitionPage active={animationStatus} />
+            <div className="wrapper">
+              <MobileMenu active={!menuStatus} handleMenu={setMenuStatus} />
+              <div className="navbar">
+                <NavBar handleAnimation={setAnimationStatus} handleMenu={setMenuStatus} menu={menuStatus} />
+              </div>
+              <div className="content">
+                <Component {...pageProps} />
+              </div>
+              {
+                !isActive(router, '/') && (
+                  <div className="footer">
+                    <Footer handleAnimation={setAnimationStatus}/>
+                  </div>
+                )
+              }
             </div>
-            <div className="content">
-              <Component {...pageProps} />
-            </div>
-            {
-              !isActive(router, '/') && (
-                <div className="footer">
-                  <Footer handleAnimation={setAnimationStatus}/>
-                </div>
-              )
-            }
-          </div>
-        </ThemeProvider>
-    </Container>
+          </ThemeProvider>
+      </Container>
+    </MenuContext.Provider>
   )
 }
 
