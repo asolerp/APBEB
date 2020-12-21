@@ -59,7 +59,7 @@ const TransitionPage = ({ t, active }) => {
       timeout={duration}
       onEnter={() => {
         document.body.style.overflow = 'hidden'
-        window.scrollTo(0, 0)
+        // window.scrollTo(-100, 0)
       }}
       onExit={() => document.body.style.overflow = 'auto'}
       >

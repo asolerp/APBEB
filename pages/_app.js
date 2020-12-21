@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Container } from 'next/app'
 import PropTypes from 'prop-types'
 
@@ -59,6 +59,7 @@ const MyApp = ({ Component, pageProps }) => {
   const [animationStatus, setAnimationStatus] = useState(false)
   const [menuStatus, setMenuStatus] = useState(false)
 
+  const navRef = React.createRef()
   useEffect(() => {
     handlerOverflowDependingPath(router)
   }, [router])
@@ -69,14 +70,14 @@ const MyApp = ({ Component, pageProps }) => {
     <MenuContext.Provider value={menu}>
       <Container>
         <DefaultSeo config={DEFAULT_SEO} />
-        <Head title="Blank | Blank Project with i18n" />
+        <Head title="APBEB | Asociación de profesionales de bodas y eventos de Baleares" />
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <TransitionPage active={animationStatus} />
             <div className="wrapper">
               <MobileMenu active={!menuStatus} handleMenu={setMenuStatus} />
               <div className="navbar">
-                <NavBar handleAnimation={setAnimationStatus} handleMenu={setMenuStatus} menu={menuStatus} />
+                <NavBar navRef={navRef} handleAnimation={setAnimationStatus} handleMenu={setMenuStatus} menu={menuStatus} />
               </div>
               <div className="content">
                 <Component {...pageProps} />
@@ -84,7 +85,7 @@ const MyApp = ({ Component, pageProps }) => {
               {
                 !isActive(router, '/') && (
                   <div className="footer">
-                    <Footer handleAnimation={setAnimationStatus}/>
+                    <Footer navRef={navRef} handleAnimation={setAnimationStatus}/>
                   </div>
                 )
               }

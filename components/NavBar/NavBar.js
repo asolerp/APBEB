@@ -41,7 +41,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const NavBar = ({ handleAnimation, handleMenu, menu }) => {
+const NavBar = ({ navRef, handleAnimation, handleMenu, menu }) => {
   const classes = useStyles()
   const router = useRouter()
   const mobile = useMediaQuery(theme => theme.breakpoints.down('md'))
@@ -54,8 +54,8 @@ const NavBar = ({ handleAnimation, handleMenu, menu }) => {
   )
 
   return (
-        <nav className={classes.root}>
-          <Typography onClick={() => handleClick('/', handleAnimation, router)} variant="h2" className={`${classes.logo} ${menuState ? classes.white : ''}`}>APBEB</Typography>
+        <nav ref={navRef} className={classes.root}>
+          <Typography onClick={() => handleClick('/', handleAnimation, router, navRef)} variant="h2" className={`${classes.logo} ${menuState ? classes.white : ''}`}>APBEB</Typography>
           {
             !mobile
               ? <Menu handleAnimation={handleAnimation} />

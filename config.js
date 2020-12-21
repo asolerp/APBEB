@@ -1,19 +1,19 @@
 const DEFAULT_SEO = {
-  title: `Blank Proyect - Proyecto en blanco`,
-  description: 'Proyecto en blanco con NextJS',
+  title: 'APBEB - Asociación de profesionales de bodas y eventos de Baleares',
+  description: 'Eventos y bodas Baleares',
 
   openGraph: {
     url: '',
     type: 'website',
-    title: `Blank Proyect - Proyecto en blanco`,
-    description: 'Proyecto en blanco con NextJS',
+    title: 'APBEB - Asociación de profesionales de bodas y eventos de Baleares',
+    description: 'Eventos y bodas Baleares',
     defaultImageHeight: 980,
     defaultImageWidth: 1920,
     locale: 'es_ES',
-    site_name: '',
-  },
-};
+    site_name: ''
+  }
+}
 
 export {
-  DEFAULT_SEO,
-};
+  DEFAULT_SEO
+}
