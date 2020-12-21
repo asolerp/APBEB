@@ -12,7 +12,7 @@ import { Typography } from '@material-ui/core'
 import { withTranslation } from '../../i18n'
 
 // Utils
-import { handleClick } from '../../utils/general'
+import { handleClickMenuMobile, handlerOverflowDependingPath } from '../../utils/general'
 
 const duration = 1000
 
@@ -64,13 +64,13 @@ const MobileMenu = ({ t, handleMenu }) => {
     if (menuState) {
       disableScroll.on()
     } else {
-      disableScroll.off()
+      handlerOverflowDependingPath(router)
     }
-  }, [menuState])
+  }, [menuState, router])
 
   const goTo = (url) => {
-    setMenuState(false)
-    // handleClick(url, handleMenu, router)
+    // setMenuState(false)
+    handleClickMenuMobile(url, setMenuState, router)
   }
 
   return (
@@ -85,9 +85,9 @@ const MobileMenu = ({ t, handleMenu }) => {
       }}>
         <img src="/static/images/white_ring.png" className={classes.logo}></img>
         <Typography onClick={() => goTo('/about')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Sobre Nosotros</Typography>
-        <Typography onClick={() => handleClick('/asociados', handleMenu, router)} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Asociados</Typography>
-        <Typography onClick={() => handleClick('/noticias', handleMenu, router)} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Noticias</Typography>
-        <Typography onClick={() => handleClick('/contacto', handleMenu, router)} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Contacto</Typography>
+        <Typography onClick={() => goTo('/asociados')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Asociados</Typography>
+        <Typography onClick={() => goTo('/noticias')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Noticias</Typography>
+        <Typography onClick={() => goTo('/contacto')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Contacto</Typography>
       </div>
     )}
   </Transition>

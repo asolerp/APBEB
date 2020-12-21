@@ -14,7 +14,8 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     display: 'flex',
     [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column'
+      flexDirection: 'column',
+      overflow: 'hidden'
     }
   },
   homeLeft: {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Container } from 'next/app'
 import PropTypes from 'prop-types'
 
@@ -10,7 +10,7 @@ import { useRouter } from 'next/router'
 import { appWithTranslation } from '../i18n'
 import { DEFAULT_SEO } from '../config'
 import { DefaultSeo } from 'next-seo'
-import { isActive } from '../utils/general'
+import { isActive, handlerOverflowDependingPath } from '../utils/general'
 
 // Design
 import '../css/global.css'
@@ -58,6 +58,10 @@ const MyApp = ({ Component, pageProps }) => {
   const router = useRouter()
   const [animationStatus, setAnimationStatus] = useState(false)
   const [menuStatus, setMenuStatus] = useState(false)
+
+  useEffect(() => {
+    handlerOverflowDependingPath(router)
+  }, [router])
 
   const menu = useState(false)
 
