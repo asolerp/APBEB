@@ -10,7 +10,7 @@ import Social from '../components/Social/Social'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    height: '100%',
+    height: '100vh',
     width: '100%',
     display: 'flex',
     [theme.breakpoints.down('sm')]: {

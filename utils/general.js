@@ -26,7 +26,7 @@ export const handleClickMenuMobile = (href, handler, router) => {
 
 export const handlerOverflowDependingPath = (router) => {
   if (router.pathname === '/') {
-    disableScroll.on()
+    disableScroll.off()
   } else {
     disableScroll.off()
   }

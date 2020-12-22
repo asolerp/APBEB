@@ -5,6 +5,7 @@
   html,
   body {
     height: 100%;
+    overflow-x: hidden !important;
   }
 
 ol, ul {
@@ -12,8 +13,8 @@ ol, ul {
 }
 
 .wrapper {
-  height: 100vh;
-  min-height: 100vh;
+  /* height: 100vh; */
+  /* min-height: 100vh; */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -32,11 +33,13 @@ ol, ul {
   display: flex;
   flex: 10;
   background-color: #F8F4F1;
+  overflow-x: hidden;
 }
 
 .footer {
   display: flex;
   flex: 1;
+  -webkit-flex: 1;
 }
 
 .my-node-enter {

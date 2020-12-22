@@ -30,13 +30,15 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     flex: 1,
+    '-webkit-flex': 1,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     textAlign: 'left',
     paddingLeft: '140px',
     [theme.breakpoints.down('sm')]: {
       paddingLeft: '0',
-      marginBottom: '20%'
+      marginBottom: '20%',
+      flex: 'auto'
     }
   },
   title: {
@@ -64,8 +66,8 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: 'cover',
     backgroundImage: 'url(\'/static/images/flores.png\')',
     [theme.breakpoints.down('sm')]: {
-      height: '50vh',
       width: '100%',
+      height: '50vh',
       flex: 'auto',
       marginBottom: '20%'
     }

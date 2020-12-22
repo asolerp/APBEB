@@ -25,7 +25,8 @@ const useStyles = makeStyles(theme => ({
     flex: 4,
     paddingLeft: '140px',
     [theme.breakpoints.down('sm')]: {
-      paddingLeft: '0px'
+      paddingLeft: '0px',
+      flex: 'auto'
     }
   },
   entradas: {

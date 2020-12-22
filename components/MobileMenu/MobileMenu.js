@@ -14,7 +14,7 @@ import { withTranslation } from '../../i18n'
 // Utils
 import { handleClickMenuMobile, handlerOverflowDependingPath } from '../../utils/general'
 
-const duration = 1000
+const duration = 500
 
 const defaultStyle = {
   position: 'absolute',
