@@ -61,6 +61,13 @@ const MyApp = ({ Component, pageProps }) => {
 
   const navRef = React.createRef()
   useEffect(() => {
+    router.events.on('routeChangeComplete', () => {
+      console.log('route')
+      window.scrollTo({
+        top: 0,
+        left: 0
+      })
+    })
     handlerOverflowDependingPath(router)
   }, [router])
 
@@ -75,20 +82,18 @@ const MyApp = ({ Component, pageProps }) => {
             <CssBaseline />
             <TransitionPage active={animationStatus} />
             <div className="wrapper">
-              <MobileMenu active={!menuStatus} handleMenu={setMenuStatus} />
+              {
+                !menuStatus && <MobileMenu active={!menuStatus} handleMenu={setMenuStatus} />
+              }
               <div className="navbar">
                 <NavBar navRef={navRef} handleAnimation={setAnimationStatus} handleMenu={setMenuStatus} menu={menuStatus} />
               </div>
               <div className="content">
                 <Component {...pageProps} />
               </div>
-              {
-                !isActive(router, '/') && (
-                  <div className="footer">
-                    <Footer navRef={navRef} handleAnimation={setAnimationStatus}/>
-                  </div>
-                )
-              }
+              <div className="footer">
+                <Footer navRef={navRef} handleAnimation={setAnimationStatus}/>
+              </div>
             </div>
           </ThemeProvider>
       </Container>
@@ -100,5 +105,9 @@ MyApp.propTypes = {
   Component: PropTypes.any,
   pageProps: PropTypes.any
 }
+
+// MyApp.getInitialProps = async () => ({
+//   namespacesRequired: ['common']
+// })
 
 export default appWithTranslation(MyApp)

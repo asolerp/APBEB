@@ -19,7 +19,7 @@ const duration = 500
 const defaultStyle = {
   position: 'absolute',
   zIndex: 1,
-  transition: `all ${duration}ms ease-in-out`,
+  transition: `right ${duration}ms ease-in-out`,
   right: '-110%',
   width: '100vw',
   height: '100vh',
@@ -45,12 +45,18 @@ const useStyles = makeStyles(theme => ({
     opacity: 1,
     width: '50px',
     transition: 'opacity 1s',
-    marginBottom: '15%'
+    marginBottom: '15%',
+    [`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+      marginBottom: '5%'
+    }
   },
   menuItem: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: '2rem'
+    fontSize: '2rem',
+    [`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+      fontSize: '1.5rem'
+    }
   }
 }))
 
@@ -62,9 +68,9 @@ const MobileMenu = ({ t, handleMenu }) => {
 
   useEffect(() => {
     if (menuState) {
-      disableScroll.on()
+      // disableScroll.on()
     } else {
-      handlerOverflowDependingPath(router)
+      // handlerOverflowDependingPath(router)
     }
   }, [menuState, router])
 

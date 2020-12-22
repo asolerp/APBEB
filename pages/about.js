@@ -24,6 +24,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       padding: '0 2rem'
+    },
+    [`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+      flexDirection: 'row'
     }
   },
   homeLeft: {
@@ -39,6 +42,10 @@ const useStyles = makeStyles(theme => ({
       paddingLeft: '0',
       marginBottom: '20%',
       flex: 'auto'
+    },
+    [`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+      flex: 1,
+      paddingRight: '5%'
     }
   },
   title: {
@@ -70,6 +77,12 @@ const useStyles = makeStyles(theme => ({
       height: '50vh',
       flex: 'auto',
       marginBottom: '20%'
+    },
+    [`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+      flex: 1,
+      height: 'auto',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover'
     }
   }
 }))

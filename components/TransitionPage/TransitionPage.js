@@ -9,7 +9,7 @@ const duration = 1000
 const defaultStyle = {
   position: 'absolute',
   zIndex: 2,
-  transition: `all ${duration}ms ease-in-out`,
+  transition: `top ${duration}ms ease-in-out`,
   top: '-120%',
   width: '100vw',
   height: '100vh',

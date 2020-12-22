@@ -11,6 +11,9 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '10%',
     [theme.breakpoints.down('sm')]: {
       marginBottom: '20%'
+    },
+    [`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+      marginBottom: '10%'
     }
   },
   avatarWrapper: {

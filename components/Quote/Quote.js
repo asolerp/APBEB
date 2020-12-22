@@ -11,6 +11,10 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       marginTop: '40%',
       marginBottom: '20%'
+    },
+    [`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+      marginTop: '10%',
+      marginBottom: '10%'
     }
   },
   quote: {

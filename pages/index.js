@@ -7,6 +7,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 import Social from '../components/Social/Social'
+import ItemIcon from '../components/ItemIcon/ItemIcon'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,6 +17,10 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       overflow: 'hidden'
+    },
+    [`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+      flexDirection: 'row',
+      height: '100vh'
     }
   },
   homeLeft: {
@@ -62,6 +67,31 @@ const useStyles = makeStyles(theme => ({
     objectFit: 'contain',
     [theme.breakpoints.down('sm')]: {
       width: '80%'
+    },
+    [`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+      width: '80%'
+    }
+  },
+  iconsWrapper: {
+    height: '10vh',
+    display: 'flex',
+    justifyContent: 'space-around',
+    padding: '10% 0%',
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      height: '100vh'
+    },
+    [`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+      flexDirection: 'row'
+    }
+  },
+  icon: {
+    width: '10rem',
+    [theme.breakpoints.down('sm')]: {
+      width: '8rem'
+    },
+    [`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
+      width: '8rem'
     }
   }
 }))
@@ -71,15 +101,22 @@ const Home = ({ t }) => {
   const mobile = useMediaQuery(theme => theme.breakpoints.down('md'))
 
   return (
-    <div className={classes.root}>
-      <div className={classes.homeLeft}>
-        <Typography variant="h1" className={classes.title}>{t('home.title')}</Typography>
-        {
-          !mobile && <Social footer={true}/>
-        }
+    <div>
+      <div className={classes.root}>
+        <div className={classes.homeLeft}>
+          <Typography variant="h1" className={classes.title}>{t('home.title')}</Typography>
+          {
+            !mobile && <Social footer={true}/>
+          }
+        </div>
+        <div className={classes.homeRight}>
+          <img src="static/images/shoe.png" alt="wedding" className={classes.homeImage}/>
+        </div>
       </div>
-      <div className={classes.homeRight}>
-        <img src="static/images/shoe.png" alt="wedding" className={classes.homeImage}/>
+      <div className={classes.iconsWrapper}>
+        <ItemIcon icon={<img className={classes.icon} src="/static/images/cake.svg" />} title="Lorem Ipsum"/>
+        <ItemIcon icon={<img className={classes.icon} src="/static/images/married.svg" />} title="Lorem Ipsum"/>
+        <ItemIcon icon={<img className={classes.icon} src="/static/images/rings.svg" />} title="Lorem Ipsum"/>
       </div>
     </div>
   )
@@ -88,6 +125,10 @@ const Home = ({ t }) => {
 Home.propTypes = {
   t: PropTypes.any
 }
+
+Home.getInitialProps = async () => ({
+  namespacesRequired: ['common']
+})
 
 Home.getInitialProps = async () => ({
   namespacesRequired: ['common']

@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+
+import { withTranslation } from '../../i18n'
+
+import { useRouter } from 'next/router'
+
+import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
-import Noticia from '../../components/Noticia/Noticia'
 import Quote from '../../components/Quote/Quote'
 
 const useStyles = makeStyles(theme => ({
@@ -24,8 +29,12 @@ const useStyles = makeStyles(theme => ({
     flex: 1,
     paddingLeft: '140px',
     [theme.breakpoints.down('sm')]: {
+      flex: 'auto',
       padding: '0px 2rem'
     }
+  },
+  backIcon: {
+    marginBottom: '5%'
   },
   subtitle: {
     color: 'grey',
@@ -52,7 +61,10 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'flex-end',
-    flex: 1.5
+    flex: 1.5,
+    [theme.breakpoints.down('sm')]: {
+      flex: 'auto'
+    }
   },
   image: {
     width: '100%',
@@ -64,11 +76,18 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const NoticiaPage = () => {
+  const router = useRouter()
   const classes = useStyles()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
         <div className={classes.root}>
             <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
             <div className={classes.noticia}>
+              <ArrowBackIcon className={classes.backIcon} onClick={() => router.back()} />
               <Typography variant="h5" className={classes.subtitle}>Domingo 29 de Noviembre de 2020</Typography>
               <Typography variant="h5" className={classes.title}>Sobre nosotros</Typography>
               <Typography variant="h6" className={classes.description}>
@@ -84,4 +103,8 @@ const NoticiaPage = () => {
   )
 }
 
-export default NoticiaPage
+NoticiaPage.getInitialProps = async () => ({
+  namespacesRequired: ['common']
+})
+
+export default withTranslation('common')(NoticiaPage)

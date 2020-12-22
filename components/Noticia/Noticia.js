@@ -1,5 +1,9 @@
 import React from 'react'
 
+import { withTranslation } from '../../i18n'
+
+import { animateScroll as scroll } from 'react-scroll'
+
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -61,23 +65,23 @@ const ColorButton = withStyles((theme) => ({
 const Noticia = ({ noticia }) => {
   const classes = useStyles()
   const router = useRouter()
+
+  const handleLink = () => {
+    document.body.scrollTop = 0
+    router.push({
+      pathname: '/noticias/[slug]',
+      query: { slug: noticia.slug }
+    })
+  }
   return (
         <div className={classes.root}>
             <div>
               <Typography variant="h5" className={classes.subtitle}>{noticia.subtitle}</Typography>
               <Typography variant="h5" className={classes.title}>{noticia.title}</Typography>
               <Typography variant="body1" className={classes.text}>{noticia.text}</Typography>
-              <Link
-                href={{
-                  pathname: '/noticias/[slug]',
-                  query: { slug: noticia.slug }
-                }}
-                // as={`/noticias/${noticia.slug}`}
-                >
-                <ColorButton variant="contained" color="primary">
-                  Ver más
-                </ColorButton>
-              </Link>
+              <ColorButton variant="contained" color="primary" onClick={() => handleLink()}>
+                Ver más
+              </ColorButton>
             </div>
             <div>
                 <img src={noticia.image} className={classes.image}></img>
@@ -86,4 +90,4 @@ const Noticia = ({ noticia }) => {
   )
 }
 
-export default Noticia
+export default withTranslation('common')(Noticia)

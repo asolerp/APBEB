@@ -1,4 +1,7 @@
 import React from 'react'
+
+import { withTranslation } from '../../i18n'
+
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
@@ -96,4 +99,8 @@ const Noticias = () => {
   )
 }
 
-export default Noticias
+// Noticias.getInitialProps = async () => ({
+//   namespacesRequired: ['common']
+// })
+
+export default withTranslation('common')(Noticias)
