@@ -61,13 +61,6 @@ const MyApp = ({ Component, pageProps }) => {
 
   const navRef = React.createRef()
   useEffect(() => {
-    router.events.on('routeChangeComplete', () => {
-      console.log('route')
-      window.scrollTo({
-        top: 0,
-        left: 0
-      })
-    })
     handlerOverflowDependingPath(router)
   }, [router])
 

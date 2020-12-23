@@ -63,7 +63,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   homeImage: {
-    width: '700px',
+    width: '600px',
     objectFit: 'contain',
     [theme.breakpoints.down('sm')]: {
       width: '80%'

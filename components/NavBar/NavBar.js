@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
 const NavBar = ({ navRef, handleAnimation, handleMenu, menu }) => {
   const classes = useStyles()
   const router = useRouter()
-  const mobile = useMediaQuery(theme => theme.breakpoints.down('md'))
+  const mobile = useMediaQuery(theme => theme.breakpoints.down('sm'))
 
   const [menuState, setMenuState] = useContext(MenuContext)
 
@@ -58,7 +58,7 @@ const NavBar = ({ navRef, handleAnimation, handleMenu, menu }) => {
           <Typography onClick={() => handleClick('/', handleAnimation, router, navRef)} variant="h2" className={`${classes.logo} ${menuState ? classes.white : ''}`}>APBEB</Typography>
           {
             !mobile
-              ? <Menu handleAnimation={handleAnimation} />
+              ? <Menu handleAnimation={handleAnimation} navRef={navRef}/>
               : <React.Fragment>
                   <HamburgerSpring isActive={menuState} toggleButton={toggleButton} barColor={menuState ? 'white' : 'black'}/>
                 </React.Fragment>
