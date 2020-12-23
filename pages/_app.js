@@ -3,6 +3,7 @@ import { Container } from 'next/app'
 import PropTypes from 'prop-types'
 
 import MenuContext from '../context/MenuContext'
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 
 import { useRouter } from 'next/router'
 
@@ -54,6 +55,8 @@ const theme = createMuiTheme({
   }
 })
 
+const queryClient = new QueryClient()
+
 const MyApp = ({ Component, pageProps }) => {
   const router = useRouter()
   const [animationStatus, setAnimationStatus] = useState(false)
@@ -67,30 +70,32 @@ const MyApp = ({ Component, pageProps }) => {
   const menu = useState(false)
 
   return (
-    <MenuContext.Provider value={menu}>
-      <Container>
-        <DefaultSeo config={DEFAULT_SEO} />
-        <Head title="APBEB | Asociación de profesionales de bodas y eventos de Baleares" />
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <TransitionPage active={animationStatus} />
-            <div className="wrapper">
-              {
-                !menuStatus && <MobileMenu active={!menuStatus} handleMenu={setMenuStatus} />
-              }
-              <div className="navbar">
-                <NavBar navRef={navRef} handleAnimation={setAnimationStatus} handleMenu={setMenuStatus} menu={menuStatus} />
+    <QueryClientProvider client={queryClient}>
+      <MenuContext.Provider value={menu}>
+        <Container>
+          <DefaultSeo config={DEFAULT_SEO} />
+          <Head title="APBEB | Asociación de profesionales de bodas y eventos de Baleares" />
+            <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <TransitionPage active={animationStatus} />
+              <div className="wrapper">
+                {
+                  !menuStatus && <MobileMenu active={!menuStatus} handleMenu={setMenuStatus} />
+                }
+                <div className="navbar">
+                  <NavBar navRef={navRef} handleAnimation={setAnimationStatus} handleMenu={setMenuStatus} menu={menuStatus} />
+                </div>
+                <div className="content">
+                  <Component {...pageProps} />
+                </div>
+                <div className="footer">
+                  <Footer navRef={navRef} handleAnimation={setAnimationStatus}/>
+                </div>
               </div>
-              <div className="content">
-                <Component {...pageProps} />
-              </div>
-              <div className="footer">
-                <Footer navRef={navRef} handleAnimation={setAnimationStatus}/>
-              </div>
-            </div>
-          </ThemeProvider>
-      </Container>
-    </MenuContext.Provider>
+            </ThemeProvider>
+        </Container>
+      </MenuContext.Provider>
+    </QueryClientProvider>
   )
 }
 

@@ -1,8 +1,12 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 
+import { useQuery } from 'react-query'
+
 import Asociado from '../components/Asociado'
 import Quote from '../components/Quote'
+
+import { query } from '../queries/asociados'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -35,6 +39,24 @@ const useStyles = makeStyles(theme => ({
 
 const Asociados = () => {
   const classes = useStyles()
+
+  const { isLoading, error, data } = useQuery('repoData', () =>
+    fetch('https://graphql.contentful.com/content/v1/spaces/7d2nsmhsonde/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        // Authenticate the request
+        Authorization: 'Bearer x9CPBjC_GvM4zAEhjlKBvYr_zZYZgutVodm0_H5wVcQ'
+      },
+      // send the GraphQL query
+      body: JSON.stringify({ query })
+    }).then(res =>
+      res.json()
+    )
+  )
+
+  console.log(data)
+
   return (
         <div className={classes.root}>
             <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
