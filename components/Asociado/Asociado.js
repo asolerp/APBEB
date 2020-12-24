@@ -44,16 +44,16 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Asociado = () => {
+const Asociado = ({ asociado }) => {
   const classes = useStyles()
   return (
         <div className={classes.root}>
             <div className={classes.avatarWrapper}>
-                <div className={classes.avatar}></div>
+                <div className={classes.avatar} style={{ backgroundImage: `url(${asociado.image.url})` }}></div>
             </div>
-            <Typography variant="h6" className={classes.name}>Lorem Ipsum</Typography>
+            <Typography variant="h6" className={classes.name}>{asociado.name}</Typography>
             <Typography variant="body2" className={classes.description}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              { asociado.description }
             </Typography>
         </div>
   )

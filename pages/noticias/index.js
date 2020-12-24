@@ -2,6 +2,8 @@ import React from 'react'
 
 import { withTranslation } from '../../i18n'
 
+import { query } from '../../queries/noticias'
+
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
@@ -65,28 +67,39 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const noticia1 = {
-  slug: 'lorem-ipsum',
-  subtitle: 'Domingo 29 de Noviembre de 2020',
-  title: 'Lorem Ipsum',
-  image: '/static/images/wedding.png',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+export async function getStaticProps () {
+  const noticias = await fetch('https://graphql.contentful.com/content/v1/spaces/7d2nsmhsonde/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      // Authenticate the request
+      Authorization: 'Bearer x9CPBjC_GvM4zAEhjlKBvYr_zZYZgutVodm0_H5wVcQ'
+    },
+    // send the GraphQL query
+    body: JSON.stringify({ query })
+  }).then(res =>
+    res.json()
+  )
+  return { props: { noticias } }
 }
 
-const Noticias = () => {
+const Noticias = (props) => {
+  console.log('noticias', props)
   const classes = useStyles()
+  const { noticias: { data: { noticiaCollection: { items } } } } = props
+
   return (
         <div className={classes.root}>
             <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
             <div className={classes.noticias}>
-                <Noticia noticia={noticia1} />
-                <hr className={classes.hr}/>
-                <Noticia noticia={noticia1} />
-                <hr className={classes.hr}/>
-                <Noticia noticia={noticia1} />
-                <hr className={classes.hr}/>
-                <Noticia noticia={noticia1} />
-                <hr className={classes.hr}/>
+              {
+                items.map((noticia, i) => (
+                  <div key={`noticia-${i}`}>
+                    <Noticia noticia={noticia} />
+                    <hr className={classes.hr}/>
+                  </div>
+                ))
+              }
             </div>
             <div className={classes.entradas}>
               <Typography variant="h5" className={classes.entradasTitle}>Entradas</Typography>

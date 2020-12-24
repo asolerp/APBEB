@@ -13,6 +13,7 @@
     "disable-scroll": "^0.6.0",
     "emailjs-com": "^2.6.3",
     "hamburger-react": "^2.4.0",
+    "moment": "^2.29.1",
     "next": "^9.5.5",
     "next-i18next": "^6.0.3",
     "next-images": "^1.6.2",

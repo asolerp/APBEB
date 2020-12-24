@@ -3,6 +3,7 @@ import React from 'react'
 import { withTranslation } from '../../i18n'
 
 import { animateScroll as scroll } from 'react-scroll'
+import moment from 'moment'
 
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -76,7 +77,7 @@ const Noticia = ({ noticia }) => {
   return (
         <div className={classes.root}>
             <div>
-              <Typography variant="h5" className={classes.subtitle}>{noticia.subtitle}</Typography>
+              <Typography variant="h5" className={classes.subtitle}>{moment(noticia.subtitle).locale('es').format('LL')}</Typography>
               <Typography variant="h5" className={classes.title}>{noticia.title}</Typography>
               <Typography variant="body1" className={classes.text}>{noticia.text}</Typography>
               <ColorButton variant="contained" color="primary" onClick={() => handleLink()}>
@@ -84,7 +85,7 @@ const Noticia = ({ noticia }) => {
               </ColorButton>
             </div>
             <div>
-                <img src={noticia.image} className={classes.image}></img>
+                <img src={noticia.image.url} className={classes.image}></img>
             </div>
         </div>
   )

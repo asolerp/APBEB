@@ -1,8 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 
-import { useQuery } from 'react-query'
-
 import Asociado from '../components/Asociado'
 import Quote from '../components/Quote'
 
@@ -37,39 +35,36 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Asociados = () => {
-  const classes = useStyles()
-
-  const { isLoading, error, data } = useQuery('repoData', () =>
-    fetch('https://graphql.contentful.com/content/v1/spaces/7d2nsmhsonde/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        // Authenticate the request
-        Authorization: 'Bearer x9CPBjC_GvM4zAEhjlKBvYr_zZYZgutVodm0_H5wVcQ'
-      },
-      // send the GraphQL query
-      body: JSON.stringify({ query })
-    }).then(res =>
-      res.json()
-    )
+export async function getStaticProps () {
+  const asociados = await fetch('https://graphql.contentful.com/content/v1/spaces/7d2nsmhsonde/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      // Authenticate the request
+      Authorization: 'Bearer x9CPBjC_GvM4zAEhjlKBvYr_zZYZgutVodm0_H5wVcQ'
+    },
+    // send the GraphQL query
+    body: JSON.stringify({ query })
+  }).then(res =>
+    res.json()
   )
+  return { props: { asociados } }
+}
 
-  console.log(data)
+const Asociados = (props) => {
+  console.log(props)
+  const { asociados: { data: { asociadoCollection: { items } } } } = props
+  const classes = useStyles()
 
   return (
         <div className={classes.root}>
             <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
             <div className={classes.asociados}>
-              <Asociado />
-              <Asociado />
-              <Asociado />
-              <Asociado />
-              <Asociado />
-              <Asociado />
-              <Asociado />
-              <Asociado />
-              <Asociado />
+              {
+                items?.map((asociado, i) => (
+                  <Asociado key={`asociado-${i}`} asociado={asociado} />
+                ))
+              }
             </div>
         </div>
   )
