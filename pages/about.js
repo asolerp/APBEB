@@ -65,6 +65,9 @@ const useStyles = makeStyles(theme => ({
       width: '100%'
     }
   },
+  listItems: {
+    listStyle: 'circle'
+  },
   homeRight: {
     display: 'flex',
     flexDirection: 'column',
@@ -88,21 +91,83 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const About = ({ t }) => {
+  Object.keys(t('about.list')).map(element => console.log(element))
   const classes = useStyles()
   return (
     <div className={classes.root}>
       <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
       <div className={classes.contentWrapper}>
         <div className={classes.homeLeft}>
-          <Typography variant="h5" className={classes.title}>Sobre nosotros</Typography>
+          <Typography variant="h5" className={classes.title}>{t('about.title')}</Typography>
           <Typography variant="h6" className={classes.description}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            {t('about.p1')}
+          </Typography>
+          <ul style={{ marginTop: -10 }}>
+              <li className={classes.listItems}>
+                <Typography variant="subtitle1" >
+                  {t('about.list.i1')}
+                </Typography>
+              </li>
+              <li className={classes.listItems}>
+                <Typography variant="subtitle1">
+                  {t('about.list.i2')}
+                </Typography>
+              </li>
+              <li className={classes.listItems}>
+                <Typography variant="subtitle1" >
+                  {t('about.list.i3')}
+                </Typography>
+              </li>
+              <li className={classes.listItems}>
+                <Typography variant="subtitle1" >
+                  {t('about.list.i4')}
+                </Typography>
+              </li>
+              <li className={classes.listItems}>
+                <Typography variant="subtitle1" >
+                  {t('about.list.i5')}
+                </Typography>
+              </li>
+              <li className={classes.listItems}>
+                <Typography variant="subtitle1" >
+                  {t('about.list.i7')}
+                </Typography>
+              </li>
+              <li className={classes.listItems}>
+                <Typography variant="subtitle1">
+                  {t('about.list.i8')}
+                </Typography>
+              </li>
+              <li className={classes.listItems}>
+                <Typography variant="subtitle1" >
+                  {t('about.list.i8')}
+                </Typography>
+              </li>
+              <li className={classes.listItems}>
+                <Typography variant="subtitle1">
+                  {t('about.list.i9')}
+                </Typography>
+              </li>
+              <li className={classes.listItems}>
+                <Typography variant="subtitle1">
+                  {t('about.list.i10')}
+                </Typography>
+              </li>
+              <li className={classes.listItems}>
+                <Typography variant="subtitle1">
+                  {t('about.list.i11')}
+                </Typography>
+              </li>
+          </ul>
+          <Typography variant="h6" className={classes.description}>
+            {t('about.p2')}
           </Typography>
           <Typography variant="h6" className={classes.description}>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor.
+            {t('about.p3')}
           </Typography>
           <Typography variant="h6" className={classes.description}>
-          Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?          </Typography>
+            {t('about.p4')}
+          </Typography>
         </div>
         <div className={classes.homeRight}>
         </div>

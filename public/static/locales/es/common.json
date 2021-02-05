@@ -1,5 +1,25 @@
 {
   "home": {
     "title": "Lorem ipsum dolor sit, amet consectetur."
+  },
+  "about": {
+    "title": "Sobre nosotros",
+    "p1": "APBEB nace como la primera Asociación de Profesionales de Bodas y Eventos en Baleares con el fin de unir a todos los proveedores y dar mayor visibilidad al sector.",
+    "list": {
+      "i1": "Moda nupcial (vestidos, trajes, complementos, etc.)",
+      "i2": "Caterings y repostería.",
+      "i3": "Decoración y floristas.",
+      "i4": "Mobiliario y menaje",
+      "i5": "Localizaciones (fincas, restaurantes, hoteles, etc)",
+      "i6": "Sonido e iluminación (músicos, djs, etc)",
+      "i7": "Belleza (peluquería, maquillaje, estética, etc)",
+      "i8": "Wedding Planners",
+      "i9": "Imagen (fotografía y video)",
+      "i10": "Animación.",
+      "i11": "Transporte"
+    },
+    "p2": "La asociación surge a raíz de la crisis sanitaria que golpeó nuestro sector de una forma severa buscando la unidad de todos los profesionales del sector para afrontar estos tiempos tan difíciles.",
+    "p3": "Trabajamos para que el sector de las bodas y eventos tenga voz en España.",
+    "p4": "¡Hazte socio y ayúdanos a seguir creciendo! ¡Ahora es el momento, juntos sumamos!"
   }
 }
