@@ -56,17 +56,17 @@ const Profesionales = () => {
     )
   )
 
-  if (isLoading) {
-    return (
-      <Typography variant="h6">Cargando...</Typography>
-    )
-  }
+  // if (isLoading) {
+  //   return (
+  //     <Typography variant="h6">Cargando...</Typography>
+  //   )
+  // }
 
-  if (error) {
-    return (
-      <Typography variant="h6">Ha ocurrido un error</Typography>
-    )
-  }
+  // if (error) {
+  //   return (
+  //     <Typography variant="h6">Ha ocurrido un error</Typography>
+  //   )
+  // }
 
   return (
         <div className={classes.root}>
