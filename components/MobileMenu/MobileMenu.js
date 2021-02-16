@@ -53,6 +53,7 @@ const useStyles = makeStyles(theme => ({
   menuItem: {
     color: 'white',
     fontWeight: 'bold',
+    fontFamily: 'Boowie',
     fontSize: '2rem',
     [`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
       fontSize: '1.5rem'
@@ -91,6 +92,8 @@ const MobileMenu = ({ t, handleMenu }) => {
       }}>
         <img src="/static/images/white_ring.png" className={classes.logo}></img>
         <Typography onClick={() => goTo('/about')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Sobre Nosotros</Typography>
+        <Typography onClick={() => goTo('/beneficios')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Beneficios</Typography>
+        <Typography onClick={() => goTo('/profesionales')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Profesionales</Typography>
         <Typography onClick={() => goTo('/asociados')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Asociados</Typography>
         <Typography onClick={() => goTo('/noticias')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Noticias</Typography>
         <Typography onClick={() => goTo('/contacto')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Contacto</Typography>

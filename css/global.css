@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Champagne";
+  src: url("/static/fonts/Champagne.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Boowie";
+  src: url("/static/fonts/BOOWIE.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+  
   * {
     box-sizing: border-box;
   }

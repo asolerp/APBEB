@@ -16,6 +16,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'flex-end'
   },
   menuSection: {
+    fontFamily: 'Boowie',
     position: 'relative',
     fontWeight: '600',
     cursor: 'pointer',
@@ -42,6 +43,16 @@ const Menu = ({ handleAnimation, navRef }) => {
       <li>
         <Box mr={3}>
           <Typography onClick={() => handleClick('/about', handleAnimation, router, navRef)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/about') ? classes.menuSectionActive : ''}`}>Quines somos</Typography>
+        </Box>
+      </li>
+      <li>
+        <Box mr={3}>
+          <Typography onClick={() => handleClick('/beneficios', handleAnimation, router, navRef)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/beneficios') ? classes.menuSectionActive : ''}`}>Beneficios</Typography>
+        </Box>
+      </li>
+      <li>
+        <Box mr={3}>
+          <Typography onClick={() => handleClick('/profesionales', handleAnimation, router, navRef)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/profesionales') ? classes.menuSectionActive : ''}`}>Profesionales</Typography>
         </Box>
       </li>
       <li>

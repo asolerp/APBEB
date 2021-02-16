@@ -36,19 +36,20 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     display: 'flex',
+    fontFamily: 'Champagne',
     flex: 10,
     justifyContent: 'flex-start',
     alignItems: 'center',
-    width: '60%',
-    fontSize: '4.5rem',
+    width: '70%',
+    fontSize: '3rem',
     fontWeight: '400',
     paddingLeft: '140px',
     marginTop: '5rem',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '3rem',
-      fontWeight: 'bold',
+      marginTop: 0,
+      fontSize: '2.5rem',
       paddingLeft: '2rem',
-      width: '50%'
+      width: '100%'
     }
   },
   homeRight: {

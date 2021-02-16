@@ -3,10 +3,11 @@ import { makeStyles } from '@material-ui/core/styles'
 
 import { useQuery } from 'react-query'
 
-import Asociado from '../components/Asociado/Asociado'
+import Profesional from '../components/Profesional'
 import Quote from '../components/Quote/Quote'
 
 import { query } from '../queries/asociados'
+import { Typography } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   },
   asociados: {
     display: 'flex',
-    width: '60%',
+    width: '50%',
     justifyContent: 'space-around',
     alignItems: 'flex-start',
     flexWrap: 'wrap',
@@ -37,10 +38,10 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Asociados = () => {
+const Profesionales = () => {
   const classes = useStyles()
 
-  const { isLoading, error, data } = useQuery('repoData', () =>
+  const { isLoading, error, data: profesionales } = useQuery('repoData', () =>
     fetch('https://graphql.contentful.com/content/v1/spaces/7d2nsmhsonde/', {
       method: 'POST',
       headers: {
@@ -55,18 +56,30 @@ const Asociados = () => {
     )
   )
 
-  console.log(data)
+  if (isLoading) {
+    return (
+      <Typography variant="h6">Cargando...</Typography>
+    )
+  }
+
+  if (error) {
+    return (
+      <Typography variant="h6">Ha ocurrido un error</Typography>
+    )
+  }
 
   return (
         <div className={classes.root}>
             <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
             <div className={classes.asociados}>
-              <Asociado />
-              <Asociado />
-              <Asociado />
+              {
+                profesionales?.data?.asociadoCollection?.items?.map((profesional, i) => (
+                  <Profesional key={i} profesional={profesional} />
+                ))
+              }
             </div>
         </div>
   )
 }
 
-export default Asociados
+export default Profesionales

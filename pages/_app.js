@@ -1,5 +1,7 @@
+import App, { Container } from 'next/app'
+
 import React, { useState, useEffect, useRef } from 'react'
-import { Container } from 'next/app'
+
 import PropTypes from 'prop-types'
 
 import MenuContext from '../context/MenuContext'
@@ -104,8 +106,6 @@ MyApp.propTypes = {
   pageProps: PropTypes.any
 }
 
-// MyApp.getInitialProps = async () => ({
-//   namespacesRequired: ['common']
-// })
+MyApp.getInitialProps = async (appContext) => ({ ...await App.getInitialProps(appContext) })
 
 export default appWithTranslation(MyApp)

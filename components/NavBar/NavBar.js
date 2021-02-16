@@ -29,10 +29,14 @@ const useStyles = makeStyles(theme => ({
     }
   },
   logo: {
-    fontWeight: 'bold',
+    width: '200px',
+    height: '100px',
     cursor: 'pointer',
+    zIndex: 0,
     [theme.breakpoints.down('sm')]: {
-      fontSize: '2.5rem'
+      width: '180px'
+
+      // fontSize: '2.5rem'
     }
   },
   white: {
@@ -55,7 +59,8 @@ const NavBar = ({ navRef, handleAnimation, handleMenu, menu }) => {
 
   return (
         <nav ref={navRef} className={classes.root}>
-          <Typography onClick={() => handleClick('/', handleAnimation, router, navRef)} variant="h2" className={`${classes.logo} ${menuState ? classes.white : ''}`}>APBEB</Typography>
+          <img onClick={() => handleClick('/', handleAnimation, router, navRef)} src={!menuState ? '/static/images/logo_boda.png' : '/static/images/logo_boda_white.png' } className={classes.logo}></img>
+          {/* <Typography onClick={() => handleClick('/', handleAnimation, router, navRef)} variant="h2" className={`${classes.logo} ${menuState ? classes.white : ''}`}>APBEB</Typography> */}
           {
             !mobile
               ? <Menu handleAnimation={handleAnimation} navRef={navRef}/>

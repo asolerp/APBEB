@@ -21,6 +21,9 @@ const useStyles = makeStyles(theme => ({
     height: '100%',
     width: '100%',
     display: 'flex',
+    padding: '0 20%',
+    flexDirection: 'column',
+    marginBottom: '5%',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       padding: '0 2rem'
@@ -29,38 +32,9 @@ const useStyles = makeStyles(theme => ({
       flexDirection: 'row'
     }
   },
-  homeLeft: {
-    display: 'flex',
-    flexDirection: 'column',
-    flex: 1,
-    '-webkit-flex': 1,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    textAlign: 'left',
-    paddingLeft: '140px',
-    [theme.breakpoints.down('sm')]: {
-      paddingLeft: '0',
-      marginBottom: '20%',
-      flex: 'auto'
-    },
-    [`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
-      flex: 1,
-      paddingRight: '5%'
-    }
-  },
   title: {
     textAlign: 'left',
     marginBottom: '3%',
-    marginTop: '10%',
-    fontWeight: 'bold',
-    [theme.breakpoints.down('sm')]: {
-      marginBottom: '10%'
-    }
-  },
-  title2: {
-    textAlign: 'left',
-    marginBottom: '3%',
-    marginTop: '2%',
     fontWeight: 'bold',
     [theme.breakpoints.down('sm')]: {
       marginBottom: '10%'
@@ -75,7 +49,8 @@ const useStyles = makeStyles(theme => ({
     }
   },
   listItems: {
-    listStyle: 'circle'
+    listStyle: 'circle',
+    marginBottom: '5%'
   },
   homeRight: {
     display: 'flex',
@@ -99,108 +74,87 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const About = ({ t }) => {
+const Beneficios = ({ t }) => {
   Object.keys(t('about.list')).map(element => console.log(element))
   const classes = useStyles()
   return (
     <div className={classes.root}>
       <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
       <div className={classes.contentWrapper}>
-        <div className={classes.homeLeft}>
-          <Typography variant="h5" className={classes.title}>{t('about.title')}</Typography>
-          <Typography variant="h6" className={classes.description}>
-            {t('about.p1')}
-          </Typography>
+          <Typography variant="h5" className={classes.title}>{t('beneficios.title')}</Typography>
           <ul style={{ marginTop: -10 }}>
               <li className={classes.listItems}>
                 <Typography variant="subtitle1" >
-                  {t('about.list.i1')}
+                  {t('beneficios.list.i1')}
                 </Typography>
               </li>
               <li className={classes.listItems}>
                 <Typography variant="subtitle1">
-                  {t('about.list.i2')}
+                  {t('beneficios.list.i2')}
                 </Typography>
               </li>
               <li className={classes.listItems}>
                 <Typography variant="subtitle1" >
-                  {t('about.list.i3')}
+                  {t('beneficios.list.i3')}
                 </Typography>
               </li>
               <li className={classes.listItems}>
                 <Typography variant="subtitle1" >
-                  {t('about.list.i4')}
+                  {t('beneficios.list.i4')}
                 </Typography>
               </li>
               <li className={classes.listItems}>
                 <Typography variant="subtitle1" >
-                  {t('about.list.i5')}
+                  {t('beneficios.list.i5')}
                 </Typography>
               </li>
               <li className={classes.listItems}>
                 <Typography variant="subtitle1" >
-                  {t('about.list.i7')}
+                  {t('beneficios.list.i7')}
                 </Typography>
               </li>
               <li className={classes.listItems}>
                 <Typography variant="subtitle1">
-                  {t('about.list.i8')}
+                  {t('beneficios.list.i8')}
                 </Typography>
               </li>
               <li className={classes.listItems}>
                 <Typography variant="subtitle1" >
-                  {t('about.list.i8')}
+                  {t('beneficios.list.i8')}
                 </Typography>
               </li>
               <li className={classes.listItems}>
                 <Typography variant="subtitle1">
-                  {t('about.list.i9')}
+                  {t('beneficios.list.i9')}
                 </Typography>
               </li>
               <li className={classes.listItems}>
                 <Typography variant="subtitle1">
-                  {t('about.list.i10')}
+                  {t('beneficios.list.i10')}
                 </Typography>
               </li>
               <li className={classes.listItems}>
                 <Typography variant="subtitle1">
-                  {t('about.list.i11')}
+                  {t('beneficios.list.i11')}
+                </Typography>
+              </li>
+              <li className={classes.listItems}>
+                <Typography variant="subtitle1">
+                  {t('beneficios.list.i12')}
                 </Typography>
               </li>
           </ul>
-          <Typography variant="h6" className={classes.description}>
-            {t('about.p2')}
-          </Typography>
-          <Typography variant="h6" className={classes.description}>
-            {t('about.p3')}
-          </Typography>
-          <Typography variant="h6" className={classes.description}>
-            {t('about.p4')}
-          </Typography>
-          <Typography variant="h5" className={classes.title2}>{t('about.title2')}</Typography>
-          <Typography variant="h6" className={classes.description}>
-            {t('about.p5')}
-          </Typography>
-          <Typography variant="h6" className={classes.description}>
-            {t('about.p6')}
-          </Typography>
-          <Typography variant="h6" className={classes.description} style={{ marginBottom: '10%' }}>
-            {t('about.p7')}
-          </Typography>
-        </div>
-        <div className={classes.homeRight}>
-        </div>
       </div>
     </div>
   )
 }
 
-About.propTypes = {
+Beneficios.propTypes = {
   t: PropTypes.any
 }
 
-About.getInitialProps = async () => ({
+Beneficios.getInitialProps = async () => ({
   namespacesRequired: ['common']
 })
 
-export default withTranslation('common')(About)
+export default withTranslation('common')(Beneficios)
