@@ -49,7 +49,7 @@ const useStyles = makeStyles(theme => ({
       marginTop: 0,
       fontSize: '2.5rem',
       paddingLeft: '2rem',
-      width: '100%'
+      width: '80%'
     }
   },
   homeRight: {
