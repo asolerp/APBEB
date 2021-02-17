@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { useQuery } from 'react-query'
+
 import { withTranslation } from '../../i18n'
 
 import { makeStyles } from '@material-ui/core/styles'
@@ -7,6 +9,8 @@ import { Typography } from '@material-ui/core'
 
 import Noticia from '../../components/Noticia/Noticia'
 import Quote from '../../components/Quote/Quote'
+
+import { query } from '../../queries/noticias'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -75,25 +79,41 @@ const noticia1 = {
 
 const Noticias = () => {
   const classes = useStyles()
+
+  const { isLoading, error, data: noticias } = useQuery('repoData', () =>
+    fetch('https://graphql.contentful.com/content/v1/spaces/7d2nsmhsonde/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        // Authenticate the request
+        Authorization: 'Bearer x9CPBjC_GvM4zAEhjlKBvYr_zZYZgutVodm0_H5wVcQ'
+      },
+      // send the GraphQL query
+      body: JSON.stringify({ query })
+    }).then(res =>
+      res.json()
+    )
+  )
+
+  console.log(noticias)
+
   return (
         <div className={classes.root}>
             <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
             <div className={classes.noticias}>
-                <Noticia noticia={noticia1} />
-                <hr className={classes.hr}/>
-                <Noticia noticia={noticia1} />
-                <hr className={classes.hr}/>
-                <Noticia noticia={noticia1} />
-                <hr className={classes.hr}/>
-                <Noticia noticia={noticia1} />
-                <hr className={classes.hr}/>
+              {
+                noticias?.data?.noticiaCollection?.items?.map((noticia, i) => (
+                  <React.Fragment key={i}>
+                    <Noticia noticia={noticia} />
+                    <hr className={classes.hr}/>
+                  </React.Fragment>
+                ))
+              }
             </div>
             <div className={classes.entradas}>
               <Typography variant="h5" className={classes.entradasTitle}>Entradas</Typography>
+              <Typography variant="h5" className={classes.entradasMonth}>Febrero 2021</Typography>
               <Typography variant="h5" className={classes.entradasMonth}>Diciembre 2020</Typography>
-              <Typography variant="h5" className={classes.entradasMonth}>Noviembre 2020</Typography>
-              <Typography variant="h5" className={classes.entradasMonth}>Octubre 2020</Typography>
-              <Typography variant="h5" className={classes.entradasMonth}>Septiembre 2020</Typography>
             </div>
         </div>
   )

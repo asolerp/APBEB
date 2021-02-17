@@ -70,21 +70,23 @@ const Noticia = ({ noticia }) => {
     document.body.scrollTop = 0
     router.push({
       pathname: '/noticias/[slug]',
-      query: { slug: noticia.slug }
+      query: { slug: noticia.slug, noticia: JSON.stringify(noticia) }
     })
   }
   return (
         <div className={classes.root}>
             <div>
-              <Typography variant="h5" className={classes.subtitle}>{noticia.subtitle}</Typography>
+              <Typography variant="h5" className={classes.subtitle}>{
+                new Intl.DateTimeFormat('es-ES', { dateStyle: 'long' }).format(new Date(noticia.subtitle))
+              }</Typography>
               <Typography variant="h5" className={classes.title}>{noticia.title}</Typography>
-              <Typography variant="body1" className={classes.text}>{noticia.text}</Typography>
+              <Typography variant="body1" className={classes.text}>{noticia.textPreview}</Typography>
               <ColorButton variant="contained" color="primary" onClick={() => handleLink()}>
                 Ver más
               </ColorButton>
             </div>
             <div>
-                <img src={noticia.image} className={classes.image}></img>
+                <img src={noticia.image?.url} className={classes.image}></img>
             </div>
         </div>
   )

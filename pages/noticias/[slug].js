@@ -10,6 +10,9 @@ import { Typography } from '@material-ui/core'
 
 import Quote from '../../components/Quote/Quote'
 
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import parse from 'html-react-parser'
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -29,8 +32,9 @@ const useStyles = makeStyles(theme => ({
     flex: 1,
     paddingLeft: '140px',
     [theme.breakpoints.down('sm')]: {
-      flex: 'auto',
-      padding: '0px 2rem'
+      padding: '0px 2rem',
+      margin: 0,
+      width: '100%'
     }
   },
   backIcon: {
@@ -66,6 +70,19 @@ const useStyles = makeStyles(theme => ({
       flex: 'auto'
     }
   },
+  embedContainer: {
+    position: 'relative',
+    paddingBottom: '56.25%',
+    height: 0,
+    overflow: 'hidden'
+  },
+  iframe: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%;',
+    height: '100%;'
+  },
   image: {
     width: '100%',
     objectFit: 'contain',
@@ -75,9 +92,17 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const NoticiaPage = () => {
+const NoticiaPage = (props) => {
   const router = useRouter()
   const classes = useStyles()
+
+  const { noticia } = router.query
+
+  const parsedNoticia = JSON.parse(noticia)
+
+  console.log(documentToReactComponents(parsedNoticia.content.json))
+
+  console.log(parsedNoticia)
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -88,16 +113,23 @@ const NoticiaPage = () => {
             <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
             <div className={classes.noticia}>
               <ArrowBackIcon className={classes.backIcon} onClick={() => router.back()} />
-              <Typography variant="h5" className={classes.subtitle}>Domingo 29 de Noviembre de 2020</Typography>
-              <Typography variant="h5" className={classes.title}>Sobre nosotros</Typography>
+              <Typography variant="h5" className={classes.subtitle}>{new Intl.DateTimeFormat('es-ES', { dateStyle: 'long' }).format(new Date(parsedNoticia.subtitle))}</Typography>
+              <Typography variant="h5" className={classes.title}>{parsedNoticia.title}</Typography>
               <Typography variant="h6" className={classes.description}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor.
-                Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                {
+                  documentToReactComponents(parsedNoticia.content.json)
+                }
               </Typography>
+              {
+                parsedNoticia.iframe && (
+                  <div className="embed-container">
+                    { parse(parsedNoticia.iframe)}
+                  </div>
+                )
+              }
             </div>
             <div className={classes.entradas}>
-              <img src="/static/images/wedding.png" alt="wedding" className={classes.image}/>
+              <img src={parsedNoticia.image.url} alt="wedding" className={classes.image}/>
             </div>
         </div>
   )
