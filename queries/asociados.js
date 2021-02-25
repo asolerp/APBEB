@@ -4,6 +4,7 @@ export const query = `
     items {
       name
       description
+      category
       image  {
           url
       }

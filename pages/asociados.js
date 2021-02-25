@@ -180,41 +180,101 @@ const Asociados = () => {
                   <TabPanel value={value} index={0}>
                   <div className={classes.asociados}>
                   {
-                asociados?.data?.asociadoCollection?.items?.map((asociado, i) => (
-                  <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
-                ))
-              }
+                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'moda').map((asociado, i) => (
+                      <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
+                    ))
+                  }
                   </div>
                   </TabPanel>
                   <TabPanel value={value} index={1}>
-                    Item Two
+                  <div className={classes.asociados}>
+                  {
+                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'catering').map((asociado, i) => (
+                      <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
+                    ))
+                  }
+                  </div>
                   </TabPanel>
                   <TabPanel value={value} index={2}>
-                    Item Three
+                  <div className={classes.asociados}>
+                  {
+                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'decoracion').map((asociado, i) => (
+                      <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
+                    ))
+                  }
+                  </div>
                   </TabPanel>
                   <TabPanel value={value} index={3}>
-                    Item Four
+                  <div className={classes.asociados}>
+                  {
+                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'mobiliario').map((asociado, i) => (
+                      <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
+                    ))
+                  }
+                  </div>
                   </TabPanel>
                   <TabPanel value={value} index={4}>
-                    Item Five
+                  <div className={classes.asociados}>
+                  {
+                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'localizaciones').map((asociado, i) => (
+                      <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
+                    ))
+                  }
+                  </div>
                   </TabPanel>
                   <TabPanel value={value} index={5}>
-                    Item Six
+                  <div className={classes.asociados}>
+                  {
+                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'sonido').map((asociado, i) => (
+                      <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
+                    ))
+                  }
+                  </div>
                   </TabPanel>
                   <TabPanel value={value} index={6}>
-                    Item Seven
+                  <div className={classes.asociados}>
+                  {
+                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'belleza').map((asociado, i) => (
+                      <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
+                    ))
+                  }
+                  </div>
                   </TabPanel>
                   <TabPanel value={value} index={7}>
-                    Item Seven
+                  <div className={classes.asociados}>
+                  {
+                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'planner').map((asociado, i) => (
+                      <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
+                    ))
+                  }
+                  </div>
                   </TabPanel>
                   <TabPanel value={value} index={8}>
-                    Item Seven
+                  <div className={classes.asociados}>
+                  {
+                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'imagen').map((asociado, i) => (
+                      <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
+                    ))
+                  }
+                  </div>
                   </TabPanel>
                   <TabPanel value={value} index={9}>
-                    Item Seven
+                  <div className={classes.asociados}>
+                  {
+                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'animacion').map((asociado, i) => (
+                      <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
+                    ))
+                  }
+                  </div>
                   </TabPanel>
                   <TabPanel value={value} index={10}>
-                    Item Seven
+                  <div className={classes.asociados}>
+                  {
+                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'transporte').map((asociado, i) => (
+                      <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
+                    ))
+                  }
+                  </div>
                   </TabPanel>
                   </div>
                 )
