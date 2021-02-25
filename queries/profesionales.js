@@ -1,13 +1,12 @@
 export const query = `
 {
-  asociadoCollection {
+  profesionalCollection {
     items {
       name
       description
       image  {
           url
       }
-      url
     }
   }
 }

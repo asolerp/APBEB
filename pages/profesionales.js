@@ -6,7 +6,7 @@ import { useQuery } from 'react-query'
 import Profesional from '../components/Profesional'
 import Quote from '../components/Quote/Quote'
 
-import { query } from '../queries/asociados'
+import { query } from '../queries/profesionales'
 import { Typography } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
@@ -73,7 +73,7 @@ const Profesionales = () => {
             <Quote message="“Ninguno de nosotros es tan bueno como todos nosotros juntos” Ray Kroc" />
             <div className={classes.asociados}>
               {
-                profesionales?.data?.asociadoCollection?.items?.map((profesional, i) => (
+                profesionales?.data?.profesionalCollection?.items?.map((profesional, i) => (
                   <Profesional key={i} profesional={profesional} />
                 ))
               }
