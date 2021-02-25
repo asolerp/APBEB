@@ -15,7 +15,11 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    marginTop: '8%'
+    marginTop: '10%',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '40%'
+
+    }
   },
   contentWrapper: {
     height: '100%',
@@ -50,7 +54,10 @@ const useStyles = makeStyles(theme => ({
   },
   listItems: {
     listStyle: 'circle',
-    marginBottom: '5%'
+    marginBottom: '2%',
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '5%'
+    }
   },
   homeRight: {
     display: 'flex',
@@ -79,7 +86,6 @@ const Beneficios = ({ t }) => {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
       <div className={classes.contentWrapper}>
           <Typography variant="h5" className={classes.title}>{t('beneficios.title')}</Typography>
           <ul style={{ marginTop: -10 }}>

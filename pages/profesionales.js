@@ -70,7 +70,7 @@ const Profesionales = () => {
 
   return (
         <div className={classes.root}>
-            <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
+            <Quote message="“Ninguno de nosotros es tan bueno como todos nosotros juntos” Ray Kroc" />
             <div className={classes.asociados}>
               {
                 profesionales?.data?.asociadoCollection?.items?.map((profesional, i) => (

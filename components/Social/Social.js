@@ -45,7 +45,7 @@ const Social = ({ footer }) => {
         <img src="static/images/facebook.png" className={`${classes.socialIcon} ${footer ? classes.socialFooter : ''}`} />
       </li>
       <li>
-        <img src="static/images/linkedin.png" className={`${classes.socialIcon} ${footer ? classes.socialIconLinkedinFooter : ''}`}/>
+        <img src="static/images/twitter.png" className={`${classes.socialIcon} ${footer ? classes.socialIconLinkedinFooter : ''}`}/>
       </li>
     </ul>
   )

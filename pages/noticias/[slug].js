@@ -23,7 +23,8 @@ const useStyles = makeStyles(theme => ({
     margin: '0 auto',
     marginTop: '8%',
     [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column'
+      flexDirection: 'column',
+      marginTop: '40%'
     }
   },
   noticia: {
@@ -110,7 +111,6 @@ const NoticiaPage = (props) => {
 
   return (
         <div className={classes.root}>
-            <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
             <div className={classes.noticia}>
               <ArrowBackIcon className={classes.backIcon} onClick={() => router.back()} />
               <Typography variant="h5" className={classes.subtitle}>{new Intl.DateTimeFormat('es-ES', { dateStyle: 'long' }).format(new Date(parsedNoticia.subtitle))}</Typography>

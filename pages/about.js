@@ -104,7 +104,7 @@ const About = ({ t }) => {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
+      <Quote message="“Las bodas nos unen”" />
       <div className={classes.contentWrapper}>
         <div className={classes.homeLeft}>
           <Typography variant="h5" className={classes.title}>{t('about.title')}</Typography>

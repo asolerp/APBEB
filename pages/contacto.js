@@ -20,11 +20,12 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
       padding: '0 2rem',
-      marginBottom: '5rem'
+      marginBottom: '5rem',
+      marginTop: '40%'
     }
   },
   contentWrapper: {
-    height: '75%',
+    height: '100%',
     width: '80%',
     display: 'flex',
     justifyContent: 'center',
@@ -86,13 +87,9 @@ const Contacto = ({ t }) => {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
       <div className={classes.contentWrapper}>
         <div className={classes.contactLeft}>
-          <Typography variant="h4" className={classes.message}>Ponte en contacto con nosotros</Typography>
-          <Typography variant="h5" className={classes.description}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </Typography>
+          <Typography variant="h3" className={classes.message}>Ponte en contacto con nosotros</Typography>
         </div>
         <div className={classes.contactRight}>
           <Form />

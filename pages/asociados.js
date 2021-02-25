@@ -59,7 +59,7 @@ const Asociados = () => {
 
   return (
         <div className={classes.root}>
-            <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
+            <Quote message="“Juntos seremos más fuertes”" />
             <div className={classes.asociados}>
               <Asociado />
               <Asociado />

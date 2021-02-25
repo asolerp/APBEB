@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   },
   quote: {
     textAlign: 'center',
-    maxWidth: '20%',
+    maxWidth: '40%',
     fontWeight: '700',
     [theme.breakpoints.down('sm')]: {
       maxWidth: '100%',

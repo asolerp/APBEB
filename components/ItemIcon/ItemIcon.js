@@ -26,7 +26,9 @@ const ItemIcon = ({ icon, title }) => {
           scroll.scrollToTop()
         }}>
             {icon}
-            <Typography variant="h6" className={classes.title}>{title}</Typography>
+            {
+              title && (<Typography variant="h6" className={classes.title}>{title}</Typography>)
+            }
         </div>
   )
 }

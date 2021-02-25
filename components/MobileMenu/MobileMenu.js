@@ -91,9 +91,9 @@ const MobileMenu = ({ t, handleMenu }) => {
         ...transitionStyles[state]
       }}>
         <img src="/static/images/white_ring.png" className={classes.logo}></img>
-        <Typography onClick={() => goTo('/about')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Sobre Nosotros</Typography>
+        <Typography onClick={() => goTo('/about')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Quienes somos</Typography>
         <Typography onClick={() => goTo('/beneficios')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Beneficios</Typography>
-        <Typography onClick={() => goTo('/profesionales')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Profesionales</Typography>
+        <Typography onClick={() => goTo('/profesionales')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Junta Directiva</Typography>
         <Typography onClick={() => goTo('/asociados')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Asociados</Typography>
         <Typography onClick={() => goTo('/noticias')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Noticias</Typography>
         <Typography onClick={() => goTo('/contacto')} variant="subtitle1" className={`${classes.menuItem} ${classes.mb}`}>Contacto</Typography>

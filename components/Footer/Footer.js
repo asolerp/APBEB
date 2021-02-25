@@ -40,7 +40,9 @@ const Footer = ({ navRef, handleAnimation }) => {
 
   return (
         <div className={classes.root}>
-          <Typography onClick={() => handleClick('/about', handleAnimation, router, navRef)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Sobre Nosotros</Typography>
+          <Typography onClick={() => handleClick('/about', handleAnimation, router, navRef)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Quienes somos</Typography>
+          <Typography onClick={() => handleClick('/beneficios', handleAnimation, router, navRef)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Beneficios</Typography>
+          <Typography onClick={() => handleClick('/profesionales', handleAnimation, router, navRef)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Junta Directiva</Typography>
           <Typography onClick={() => handleClick('/asociados', handleAnimation, router, navRef)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Asociados</Typography>
           <Typography onClick={() => handleClick('/noticias', handleAnimation, router, navRef)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Noticias</Typography>
           <Typography onClick={() => handleClick('/contacto', handleAnimation, router, navRef)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Contacto</Typography>

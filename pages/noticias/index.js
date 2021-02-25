@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { useQuery } from 'react-query'
+import { Link, Element } from 'react-scroll'
 
 import { withTranslation } from '../../i18n'
 
@@ -11,6 +12,7 @@ import Noticia from '../../components/Noticia/Noticia'
 import Quote from '../../components/Quote/Quote'
 
 import { query } from '../../queries/noticias'
+import { Divide } from 'hamburger-react'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,7 +25,9 @@ const useStyles = makeStyles(theme => ({
     marginTop: '8%',
     [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
-      padding: '0 2rem'
+      padding: '0 2rem',
+      marginTop: '40%'
+
     }
   },
   noticias: {
@@ -79,6 +83,7 @@ const noticia1 = {
 
 const Noticias = () => {
   const classes = useStyles()
+  const [filterDates, setFilterDates] = useState()
 
   const { isLoading, error, data: noticias } = useQuery('repoData', () =>
     fetch('https://graphql.contentful.com/content/v1/spaces/7d2nsmhsonde/', {
@@ -95,25 +100,41 @@ const Noticias = () => {
     )
   )
 
-  console.log(noticias)
+  const srollToNews = (slug) => {
+    const element = document.getElementById(slug)
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest'
+    })
+  }
+
+  useEffect(() => {
+    const fechas = noticias?.data?.noticiaCollection?.items?.map(noticia => ({ date: noticia.subtitle, slug: noticia.slug }))
+    setFilterDates(fechas)
+  }, [noticias])
 
   return (
         <div className={classes.root}>
-            <Quote message="“Lorem ipsum dolor sit, amet consectetur.”" />
             <div className={classes.noticias}>
               {
                 noticias?.data?.noticiaCollection?.items?.map((noticia, i) => (
                   <React.Fragment key={i}>
-                    <Noticia noticia={noticia} />
-                    <hr className={classes.hr}/>
+                      <div id={noticia?.slug}>
+                        <Noticia noticia={noticia} />
+                        <hr className={classes.hr}/>
+                    </div>
                   </React.Fragment>
                 ))
               }
             </div>
             <div className={classes.entradas}>
               <Typography variant="h5" className={classes.entradasTitle}>Entradas</Typography>
-              <Typography variant="h5" className={classes.entradasMonth}>Febrero 2021</Typography>
-              <Typography variant="h5" className={classes.entradasMonth}>Diciembre 2020</Typography>
+              {
+                filterDates?.map((fdate, i) => (
+                    <Typography onClick={() => srollToNews(fdate.slug)} key={`date-${i}`} variant="h5" className={classes.entradasMonth}>{new Intl.DateTimeFormat('es-ES', { dateStyle: 'long' }).format(new Date(fdate.date))}</Typography>
+                ))
+              }
             </div>
         </div>
   )

@@ -42,7 +42,7 @@ const Menu = ({ handleAnimation, navRef }) => {
     <ul className={classes.root}>
       <li>
         <Box mr={3}>
-          <Typography onClick={() => handleClick('/about', handleAnimation, router, navRef)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/about') ? classes.menuSectionActive : ''}`}>Quines somos</Typography>
+          <Typography onClick={() => handleClick('/about', handleAnimation, router, navRef)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/about') ? classes.menuSectionActive : ''}`}>Quienes somos</Typography>
         </Box>
       </li>
       <li>
@@ -52,7 +52,7 @@ const Menu = ({ handleAnimation, navRef }) => {
       </li>
       <li>
         <Box mr={3}>
-          <Typography onClick={() => handleClick('/profesionales', handleAnimation, router, navRef)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/profesionales') ? classes.menuSectionActive : ''}`}>Profesionales</Typography>
+          <Typography onClick={() => handleClick('/profesionales', handleAnimation, router, navRef)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/profesionales') ? classes.menuSectionActive : ''}`}>Junta Directiva</Typography>
         </Box>
       </li>
       <li>

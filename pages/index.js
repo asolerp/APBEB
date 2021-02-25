@@ -115,9 +115,9 @@ const Home = ({ t }) => {
         </div>
       </div>
       <div className={classes.iconsWrapper}>
-        <ItemIcon icon={<img className={classes.icon} src="/static/images/cake.svg" />} title="Lorem Ipsum"/>
-        <ItemIcon icon={<img className={classes.icon} src="/static/images/married.svg" />} title="Lorem Ipsum"/>
-        <ItemIcon icon={<img className={classes.icon} src="/static/images/rings.svg" />} title="Lorem Ipsum"/>
+        <ItemIcon icon={<img className={classes.icon} src="/static/images/cake.svg" />}/>
+        <ItemIcon icon={<img className={classes.icon} src="/static/images/married.svg" />}/>
+        <ItemIcon icon={<img className={classes.icon} src="/static/images/rings.svg" />}/>
       </div>
     </div>
   )

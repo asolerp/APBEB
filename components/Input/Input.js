@@ -37,7 +37,7 @@ const Input = ({ type = 'input', label, name, ref }) => {
           <input className={classes.input} type='text' ref={ref} name={name} />
         )
           : (
-          <textarea className={classes.input} name={name} ref={ref} rows={10} />
+          <textarea className={classes.input} name={name} ref={ref} rows={5} />
             )
       }
 
