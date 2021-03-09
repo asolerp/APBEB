@@ -14,14 +14,17 @@ import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
 import Box from '@material-ui/core/Box'
 
-const AntTabs = withStyles({
+const AntTabs = withStyles((theme) => ({
   root: {
-    width: '70%'
+    width: '70%',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%'
+    }
   },
   indicator: {
     backgroundColor: '#925D56'
   }
-})(Tabs)
+}))(Tabs)
 
 const AntTab = withStyles((theme) => ({
   root: {

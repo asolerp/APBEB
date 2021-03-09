@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
     height: '230px',
     borderRadius: '50%',
     background: '#707070',
-    opacity: '0.7',
+    opacity: '0.9',
     [theme.breakpoints.down('sm')]: {
       width: '230px',
       height: '230px'
