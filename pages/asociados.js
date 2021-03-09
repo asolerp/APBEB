@@ -16,6 +16,7 @@ import Box from '@material-ui/core/Box'
 
 const AntTabs = withStyles({
   root: {
+    width: '70%'
   },
   indicator: {
     backgroundColor: '#925D56'
@@ -156,27 +157,29 @@ const Asociados = () => {
               {
                 !menuState && (
                   <div>
-                  <AntTabs
-                    value={value}
-                    onChange={handleChange}
-                    variant="scrollable"
-                    scrollButtons="on"
-                    indicatorColor="primary"
-                    textColor="primary"
-                    aria-label="scrollable force tabs example"
-                  >
-                    <AntTab label="Moda & Repostería" icon={<WeddingIcon icono="moda"/>} {...a11yProps(0)} />
-                    <AntTab label="Catering & Repostería" icon={<WeddingIcon icono="catering"/>} {...a11yProps(1)} />
-                    <AntTab label="Decoración & Florista" icon={<WeddingIcon icono="decoracion"/>} {...a11yProps(2)} />
-                    <AntTab label="Mobiliario & Menaje" icon={<WeddingIcon icono="mobiliario"/>} {...a11yProps(3)} />
-                    <AntTab label="Localizaciones" icon={<WeddingIcon icono="localizaciones"/>} {...a11yProps(4)} />
-                    <AntTab label="Sonido & Iluminación" icon={<WeddingIcon icono="sonido"/>} {...a11yProps(5)} />
-                    <AntTab label="Belleza" icon={<WeddingIcon icono="belleza"/>} {...a11yProps(6)} />
-                    <AntTab label="Wedding Planners" icon={<WeddingIcon icono="planner"/>} {...a11yProps(7)} />
-                    <AntTab label="Imagen" icon={<WeddingIcon icono="imagen"/>} {...a11yProps(8)} />
-                    <AntTab label="Animación" icon={<WeddingIcon icono="animacion"/>} {...a11yProps(9)} />
-                    <AntTab label="Transporte" icon={<WeddingIcon icono="transporte"/>} {...a11yProps(10)} />
-                  </AntTabs>
+                  <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+                    <AntTabs
+                      centered
+                      value={value}
+                      onChange={handleChange}
+                      variant="scrollable"
+                      scrollButtons="on"
+                      indicatorColor="primary"
+                      textColor="primary"
+                      aria-label="scrollable force tabs example"
+                    >
+                      <AntTab label="Moda" icon={<WeddingIcon icono="moda"/>} {...a11yProps(0)} />
+                      <AntTab label="Catering & Repostería" icon={<WeddingIcon icono="catering"/>} {...a11yProps(1)} />
+                      <AntTab label="Decoración & Florista" icon={<WeddingIcon icono="decoracion"/>} {...a11yProps(2)} />
+                      <AntTab label="Mobiliario & Menaje" icon={<WeddingIcon icono="mobiliario"/>} {...a11yProps(3)} />
+                      <AntTab label="Localizaciones" icon={<WeddingIcon icono="localizaciones"/>} {...a11yProps(4)} />
+                      <AntTab label="Sonido & Iluminación" icon={<WeddingIcon icono="sonido"/>} {...a11yProps(5)} />
+                      <AntTab label="Wedding Planners" icon={<WeddingIcon icono="planner"/>} {...a11yProps(7)} />
+                      <AntTab label="Imagen" icon={<WeddingIcon icono="imagen"/>} {...a11yProps(8)} />
+                      <AntTab label="Animación" icon={<WeddingIcon icono="animacion"/>} {...a11yProps(9)} />
+                      <AntTab label="Transporte" icon={<WeddingIcon icono="transporte"/>} {...a11yProps(10)} />
+                    </AntTabs>
+                  </div>
                   <TabPanel value={value} index={0}>
                   <div className={classes.asociados}>
                   {

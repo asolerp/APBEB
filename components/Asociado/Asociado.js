@@ -70,13 +70,14 @@ const useStyles = makeStyles(theme => ({
   },
   infoAsociadoText: {
     zIndex: 5,
-    fontSize: '.8rem',
+    fontSize: '.7rem',
+    wordWrap: 'break-word',
     color: 'white',
     textAlign: 'center',
     padding: 10,
     width: '80%',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '.7rem',
+      fontSize: '.6rem',
       width: '70%'
     }
   },
@@ -139,7 +140,7 @@ const Asociado = ({ image, desc, url, size }) => {
                   </Typography>
                   {
                     url && (
-                      <Typography onClick={() => handleClick(url)} variant='h6' className={classes.infoAsociadoText}>
+                      <Typography onClick={() => handleClick(url)} variant='h6' style={{ cursor: 'pointer' }} className={classes.infoAsociadoText}>
                         Ir a la web
                       </Typography>
                     )

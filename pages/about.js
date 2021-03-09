@@ -108,7 +108,7 @@ const About = ({ t }) => {
       <div className={classes.contentWrapper}>
         <div className={classes.homeLeft}>
           <Typography variant="h5" className={classes.title}>{t('about.title')}</Typography>
-          <Typography variant="h6" className={classes.description} style={{ marginBottom: '5%' }}>
+          <Typography variant="h6" className={classes.description} style={{ marginBottom: '3%' }}>
             {t('about.p1')}
           </Typography>
           <ul style={{ marginTop: -10 }}>
@@ -174,7 +174,7 @@ const About = ({ t }) => {
           <Typography variant="h6" className={classes.description}>
             {t('about.p3')}
           </Typography>
-          <Typography variant="h6" className={classes.description} style={{ marginBottom: '15%' }}>
+          <Typography variant="h6" className={classes.description} style={{ marginBottom: '5%' }}>
             {t('about.p4')}
           </Typography>
           <Typography variant="h5" className={classes.title2}>{t('about.title2')}</Typography>

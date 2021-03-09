@@ -116,12 +116,12 @@ const Beneficios = ({ t }) => {
               </li>
               <li className={classes.listItems}>
                 <Typography variant="subtitle1" >
-                  {t('beneficios.list.i7')}
+                  {t('beneficios.list.i6')}
                 </Typography>
               </li>
               <li className={classes.listItems}>
                 <Typography variant="subtitle1">
-                  {t('beneficios.list.i8')}
+                  {t('beneficios.list.i7')}
                 </Typography>
               </li>
               <li className={classes.listItems}>
