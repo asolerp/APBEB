@@ -240,7 +240,7 @@ const Asociados = () => {
                   <TabPanel value={value} index={6}>
                   <div className={classes.asociados}>
                   {
-                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'belleza').map((asociado, i) => (
+                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'planner').map((asociado, i) => (
                       <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
                     ))
                   }
@@ -249,7 +249,7 @@ const Asociados = () => {
                   <TabPanel value={value} index={7}>
                   <div className={classes.asociados}>
                   {
-                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'planner').map((asociado, i) => (
+                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'imagen').map((asociado, i) => (
                       <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
                     ))
                   }
@@ -258,22 +258,13 @@ const Asociados = () => {
                   <TabPanel value={value} index={8}>
                   <div className={classes.asociados}>
                   {
-                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'imagen').map((asociado, i) => (
-                      <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
-                    ))
-                  }
-                  </div>
-                  </TabPanel>
-                  <TabPanel value={value} index={9}>
-                  <div className={classes.asociados}>
-                  {
                     asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'animacion').map((asociado, i) => (
                       <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
                     ))
                   }
                   </div>
                   </TabPanel>
-                  <TabPanel value={value} index={10}>
+                  <TabPanel value={value} index={9}>
                   <div className={classes.asociados}>
                   {
                     asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'transporte').map((asociado, i) => (
