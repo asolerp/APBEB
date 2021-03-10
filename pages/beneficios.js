@@ -144,11 +144,6 @@ const Beneficios = ({ t }) => {
                   {t('beneficios.list.i11')}
                 </Typography>
               </li>
-              <li className={classes.listItems}>
-                <Typography variant="subtitle1">
-                  {t('beneficios.list.i12')}
-                </Typography>
-              </li>
           </ul>
       </div>
     </div>
