@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
 import Quote from '../components/Quote'
+import AsociateBanner from '../components/AsociateBanner/AsociateBanner'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -191,6 +192,7 @@ const About = ({ t }) => {
         <div className={classes.homeRight}>
         </div>
       </div>
+      <AsociateBanner />
     </div>
   )
 }

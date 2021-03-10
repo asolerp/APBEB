@@ -8,6 +8,7 @@ import { Typography } from '@material-ui/core'
 
 import Quote from '../components/Quote'
 import Form from '../components/Form'
+import AsociateBanner from '../components/AsociateBanner/AsociateBanner'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -90,11 +91,15 @@ const Contacto = ({ t }) => {
       <div className={classes.contentWrapper}>
         <div className={classes.contactLeft}>
           <Typography variant="h3" className={classes.message}>Ponte en contacto con nosotros</Typography>
+          <Typography variant="h5" className={classes.description}>
+            Si quieres conocernos más o quieres convertirte en socio de APBEB, ponte en contacto con nosotros.
+          </Typography>
         </div>
         <div className={classes.contactRight}>
           <Form />
         </div>
       </div>
+      <AsociateBanner />
     </div>
   )
 }

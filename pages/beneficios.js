@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
 import Quote from '../components/Quote'
+import AsociateBanner from '../components/AsociateBanner/AsociateBanner'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -144,8 +145,19 @@ const Beneficios = ({ t }) => {
                   {t('beneficios.list.i11')}
                 </Typography>
               </li>
+              <li className={classes.listItems}>
+                <Typography variant="subtitle1">
+                  {t('beneficios.list.i12')}
+                </Typography>
+              </li>
+              <li className={classes.listItems}>
+                <Typography variant="subtitle1">
+                  {t('beneficios.list.i13')}
+                </Typography>
+              </li>
           </ul>
       </div>
+      <AsociateBanner />
     </div>
   )
 }
