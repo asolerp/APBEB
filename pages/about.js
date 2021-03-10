@@ -69,10 +69,20 @@ const useStyles = makeStyles(theme => ({
   },
   description: {
     width: '70%',
-    marginBottom: '3%',
+    marginBottom: '0%',
     fontWeight: 'normal',
     [theme.breakpoints.down('sm')]: {
-      width: '100%'
+      width: '100%',
+      marginBottom: '0%'
+    }
+  },
+  description2: {
+    width: '70%',
+    marginBottom: '1%',
+    fontWeight: 'normal',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      marginBottom: '3%'
     }
   },
   listItems: {
@@ -109,10 +119,10 @@ const About = ({ t }) => {
       <div className={classes.contentWrapper}>
         <div className={classes.homeLeft}>
           <Typography variant="h5" className={classes.title}>{t('about.title')}</Typography>
-          <Typography variant="h6" className={classes.description} style={{ marginBottom: '3%' }}>
+          <Typography variant="h6" className={classes.description}>
             {t('about.p1')}
           </Typography>
-          <ul style={{ marginTop: -10 }}>
+          <ul>
               <li className={classes.listItems}>
                 <Typography variant="subtitle1" >
                   {t('about.list.i1')}
@@ -169,23 +179,23 @@ const About = ({ t }) => {
                 </Typography>
               </li>
           </ul>
-          <Typography variant="h6" className={classes.description}>
+          <Typography variant="h6" className={classes.description2}>
             {t('about.p2')}
           </Typography>
-          <Typography variant="h6" className={classes.description}>
+          <Typography variant="h6" className={classes.description2}>
             {t('about.p3')}
           </Typography>
-          <Typography variant="h6" className={classes.description} style={{ marginBottom: '5%' }}>
+          <Typography variant="h6" className={classes.description2} style={{ marginBottom: '5%' }}>
             {t('about.p4')}
           </Typography>
           <Typography variant="h5" className={classes.title2}>{t('about.title2')}</Typography>
-          <Typography variant="h6" className={classes.description}>
+          <Typography variant="h6" className={classes.description2}>
             {t('about.p5')}
           </Typography>
-          <Typography variant="h6" className={classes.description}>
+          <Typography variant="h6" className={classes.description2}>
             {t('about.p6')}
           </Typography>
-          <Typography variant="h6" className={classes.description} style={{ marginBottom: '10%' }}>
+          <Typography variant="h6" className={classes.description2} style={{ marginBottom: '10%' }}>
             {t('about.p7')}
           </Typography>
         </div>
