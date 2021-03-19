@@ -20,6 +20,12 @@ const useStyles = makeStyles(theme => ({
     background: theme.palette.primary.main,
     padding: '5% 5%'
   },
+  icon: {
+    width: '180px',
+    objectFit: 'cover',
+    marginTop: '10px',
+    marginBottom: '100px'
+  },
   mb: {
     marginBottom: '1%',
     [theme.breakpoints.down('sm')]: {
@@ -47,6 +53,10 @@ const Footer = ({ navRef, handleAnimation }) => {
           <Typography onClick={() => handleClick('/noticias', handleAnimation, router, navRef)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Noticias</Typography>
           <Typography onClick={() => handleClick('/contacto', handleAnimation, router, navRef)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Contacto</Typography>
           <Social footer={true}/>
+          <Typography variant="subtitle1" className={classes.mb}>Nuestros colaboradores</Typography>
+          <a href="http://www.mallorcaprotecciondedatos.eu">
+            <img className={classes.icon} src={'/static/images/datos.png'}/>
+          </a>
           <Typography variant="subtitle1" className={classes.mb}>Copyright APBEB</Typography>
           <Typography variant="subtitle1" className={classes.mb}>Diseñado y programado por Enalbis</Typography>
         </div>

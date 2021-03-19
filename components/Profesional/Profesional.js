@@ -27,17 +27,23 @@ const useStyles = makeStyles(theme => ({
     marginBottom: '5%'
   },
   avatar: {
-    width: '170px',
-    height: '170px',
+    width: '185px',
+    height: '185px',
     borderRadius: '50%',
     backgroundSize: 'cover',
     backgroundImage: 'url(\'/static/images/avatar.jpg\')'
   },
   name: {
     textAlign: 'center',
+    marginBottom: '0%'
+  },
+  subtitle: {
+    textAlign: 'center',
+    fontSize: 14,
     marginBottom: '5%'
   },
   description: {
+    textAlign: 'center',
     [theme.breakpoints.down('sm')]: {
       textAlign: 'center'
     }
@@ -52,6 +58,7 @@ const Profesional = ({ profesional }) => {
                 <div className={classes.avatar} style={{ backgroundImage: `url(${profesional?.image?.url})` }}></div>
             </div>
             <Typography variant="h6" className={classes.name}>{profesional?.name}</Typography>
+            <Typography variant="h6" className={classes.subtitle}>{profesional?.subtitle}</Typography>
             <Typography variant="body2" className={classes.description}>
                  {profesional?.description}
             </Typography>

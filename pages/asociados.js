@@ -180,7 +180,7 @@ const Asociados = () => {
                       <AntTab label="Wedding Planners" icon={<WeddingIcon icono="planner"/>} {...a11yProps(7)} />
                       <AntTab label="Imagen" icon={<WeddingIcon icono="imagen"/>} {...a11yProps(8)} />
                       <AntTab label="Animación" icon={<WeddingIcon icono="animacion"/>} {...a11yProps(9)} />
-                      <AntTab label="Transporte" icon={<WeddingIcon icono="transporte"/>} {...a11yProps(10)} />
+                      <AntTab label="Transporte" icon={<WeddingIcon icono="bus"/>} {...a11yProps(10)} />
                     </AntTabs>
                   </div>
                   <TabPanel value={value} index={0}>

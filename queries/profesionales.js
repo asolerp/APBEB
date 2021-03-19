@@ -4,6 +4,8 @@ export const query = `
     items {
       name
       description
+      level
+      subtitle
       image  {
           url
       }

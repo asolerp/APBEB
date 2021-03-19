@@ -12,6 +12,7 @@ import { Typography } from '@material-ui/core'
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
+    flexDirection: 'column',
     width: '100%',
     justifyContent: 'center',
     alignItems: 'flex-start',
@@ -72,8 +73,22 @@ const Profesionales = () => {
         <div className={classes.root}>
             <Quote message="“Ninguno de nosotros es tan bueno como todos nosotros juntos” Ray Kroc" />
             <div className={classes.asociados}>
+            {
+                profesionales?.data?.profesionalCollection?.items?.filter(p => p.level === '1').map((profesional, i) => (
+                  <Profesional key={i} profesional={profesional} />
+                ))
+              }
+            </div>
+            <div className={classes.asociados}>
               {
-                profesionales?.data?.profesionalCollection?.items?.map((profesional, i) => (
+                profesionales?.data?.profesionalCollection?.items?.filter(p => p.level === '2').map((profesional, i) => (
+                  <Profesional key={i} profesional={profesional} />
+                ))
+              }
+            </div>
+            <div className={classes.asociados}>
+              {
+                profesionales?.data?.profesionalCollection?.items?.filter(p => p.level === '3').map((profesional, i) => (
                   <Profesional key={i} profesional={profesional} />
                 ))
               }
