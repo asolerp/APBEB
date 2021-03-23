@@ -93,6 +93,13 @@ const Profesionales = () => {
                 ))
               }
             </div>
+            <div className={classes.asociados}>
+              {
+                profesionales?.data?.profesionalCollection?.items?.filter(p => p.level === '4').map((profesional, i) => (
+                  <Profesional key={i} profesional={profesional} />
+                ))
+              }
+            </div>
         </div>
   )
 }
