@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Input = ({ type = 'input', label, name, ref }) => {
+const Input = ({ label, register, required, type = 'input', name }) => {
   const classes = useStyles()
 
   return (
@@ -34,10 +34,10 @@ const Input = ({ type = 'input', label, name, ref }) => {
       <Typography variant="h5" className={classes.label}>{label}</Typography>
       {
         type === 'input' ? (
-          <input className={classes.input} type='text' ref={ref} name={name} />
+          <input ref={register({ required: required })} className={classes.input} type='text' name={name} />
         )
           : (
-          <textarea className={classes.input} name={name} ref={ref} rows={5} />
+          <textarea ref={register({ required: required })} className={classes.input} name={name} rows={5} />
             )
       }
 

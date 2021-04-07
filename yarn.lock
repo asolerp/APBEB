@@ -3706,7 +3706,7 @@
     "minimalistic-assert" "^1.0.0"
     "minimalistic-crypto-utils" "^1.0.0"
 
-"emailjs-com@^2.6.3":
+"emailjs-com@^2.6.4":
   "integrity" "sha512-4G8rxq+1mbL4rGntMa9tqNJ4N9BhuCl8lFJASDHxZVXeC82ivwL6qw+Zu48cAWHpNK2/F3vScaAZk8zoTAfiAA=="
   "resolved" "https://registry.npmjs.org/emailjs-com/-/emailjs-com-2.6.4.tgz"
   "version" "2.6.4"
@@ -6656,10 +6656,10 @@
   "resolved" "https://registry.npmjs.org/react-hamburger-menu/-/react-hamburger-menu-1.2.1.tgz"
   "version" "1.2.1"
 
-"react-hook-form@^6.13.0":
-  "integrity" "sha512-AADO0EtAGEggII3DNhBCwm7MSwkBWCVo72K32NY6YzhSTBL5bJsBfWJ4/PVGBer31js5ppt+I6/qUyLo8o8AvA=="
-  "resolved" "https://registry.npmjs.org/react-hook-form/-/react-hook-form-6.13.0.tgz"
-  "version" "6.13.0"
+"react-hook-form@^6.15.5":
+  "integrity" "sha512-so2jEPYKdVk1olMo+HQ9D9n1hVzaPPFO4wsjgSeZ964R7q7CHsYRbVF0PGBi83FcycA5482WHflasdwLIUVENg=="
+  "resolved" "https://registry.npmjs.org/react-hook-form/-/react-hook-form-6.15.5.tgz"
+  "version" "6.15.5"
 
 "react-i18next@^11.7.3":
   "integrity" "sha512-Aq0+QVW7NMYuAtk0Stcwp4jWeNTd1p5XefAfBPcjs/4c/2duG3v3G3zdtn8fC8L4EyA/coKLwdULHI+lYTbF8w=="

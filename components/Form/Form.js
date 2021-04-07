@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { makeStyles } from '@material-ui/core/styles'
+import CircularProgress from '@material-ui/core/CircularProgress'
+
+import { init, sendForm } from 'emailjs-com'
 
 import Input from '../Input'
+init('user_Qb7VouW29dT11OD4oNWHe')
 
 const useStyles = makeStyles(theme => ({
   formWrapper: {
@@ -32,27 +36,42 @@ const useStyles = makeStyles(theme => ({
 
 const Form = () => {
   const classes = useStyles()
+  const [loading, setLoading] = useState(false)
 
-  const { register, handleSubmit, watch, errors } = useForm()
-  const onSubmit = data => console.log(data)
+  const { register, handleSubmit, errors, reset } = useForm()
+  const onSubmit = async (data) => {
+    setLoading(true)
+    try {
+      const result = await sendForm('service_se5sv0g', 'template_xgbh9pj', '#contact-form')
+      console.log(result)
+    } catch (err) {
+      console.log(err)
+    } finally {
+      reset()
+      setLoading(false)
+    }
+  }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form id='contact-form' onSubmit={handleSubmit(onSubmit)}>
       <div className={classes.formWrapper}>
         <div className={classes.nameInput}>
-          <Input label="Nombre" name="name" defaultValue="test" ref={register} />
+          <Input register={register} name="name" label="Nombre" required />
         </div>
         <div style={{ flex: 1 }}>
-          <Input label="Apellido" name="surname" ref={register({ required: true })} />
+          <Input label="Apellido" name="surname" register={register} required />
         </div>
       </div>
       <div>
-       <Input label="Email" name="email" defaultValue="test" ref={register} />
-       <Input label="Asunto" name="subject" defaultValue="test" ref={register} />
-       <Input type="textarea" label="Mensaje" name="message" defaultValue="test" ref={register} />
+       <Input label="Email" name="email" register={register} required />
+       <Input label="Asunto" name="subject" register={register} required />
+       <Input type="textarea" label="Mensaje" name="message" register={register} required />
       </div>
       {errors.exampleRequired && <span>This field is required</span>}
-      <input type="submit" className={classes.submit} value={'Enviar'}/>
+      {
+        loading ? <CircularProgress color="secondary" /> : <input type="submit" className={classes.submit} value={'Enviar'}/>
+      }
+
     </form>
   )
 }

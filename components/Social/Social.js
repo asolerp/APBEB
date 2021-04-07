@@ -2,21 +2,24 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(theme => ({
-  root: {
+  container: {
     display: 'flex',
     flexGrow: 1,
-    justifyContent: 'center',
+    width: '10%',
+    padding: 0,
+    justifyContent: 'space-between',
     alignItems: 'center',
     marginTop: '3%',
     marginBottom: '3%',
     [theme.breakpoints.down('sm')]: {
       marginTop: '10%',
-      marginBottom: '10%'
+      marginBottom: '10%',
+      padding: 0,
+      width: '50%'
     }
   },
   socialIcon: {
-    width: '40px',
-    marginRight: '1rem'
+    width: '40px'
   },
   socialFooter: {
     border: '1px solid black',
@@ -40,7 +43,7 @@ const useStyles = makeStyles(theme => ({
 const Social = ({ footer }) => {
   const classes = useStyles()
   return (
-    <ul className={classes.root}>
+    <ul className={classes.container}>
       <li className={classes.liStyle}>
         <a href="https://instagram.com/apbeb">
           <img src="static/images/instagram.png" className={`${classes.socialIcon} ${footer ? classes.socialFooter : ''}`} />

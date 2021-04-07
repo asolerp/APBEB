@@ -35,7 +35,6 @@ const useStyles = makeStyles(theme => ({
   legalLink: {
     width: '200px',
     textAlign: 'center',
-    fontWeight: 'bold',
     cursor: 'pointer',
     [theme.breakpoints.down('sm')]: {
       fontWeight: '400',
