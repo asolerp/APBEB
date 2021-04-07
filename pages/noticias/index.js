@@ -73,19 +73,11 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const noticia1 = {
-  slug: 'lorem-ipsum',
-  subtitle: 'Domingo 29 de Noviembre de 2020',
-  title: 'Lorem Ipsum',
-  image: '/static/images/wedding.png',
-  text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-}
-
 const Noticias = () => {
   const classes = useStyles()
   const [filterDates, setFilterDates] = useState()
 
-  const { isLoading, error, data: noticias } = useQuery('repoData', () =>
+  const { data: noticias } = useQuery('repoData', () =>
     fetch('https://graphql.contentful.com/content/v1/spaces/7d2nsmhsonde/', {
       method: 'POST',
       headers: {
@@ -99,6 +91,8 @@ const Noticias = () => {
       res.json()
     )
   )
+
+  console.log(noticias)
 
   const srollToNews = (slug) => {
     const element = document.getElementById(slug)

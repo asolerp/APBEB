@@ -24,9 +24,9 @@
     overflow-x: hidden !important;
   }
 
-ol, ul {
+/* ol, ul {
   list-style: none;
-}
+} */
 
 .embed-container {
   position: relative;

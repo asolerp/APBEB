@@ -28,6 +28,7 @@ import NavBar from '../components/NavBar'
 import Footer from '../components/Footer'
 import TransitionPage from '../components/TransitionPage'
 import MobileMenu from '../components/MobileMenu'
+import CookieConsent from 'react-cookie-consent'
 
 const theme = createMuiTheme({
   typography: {
@@ -77,6 +78,16 @@ const MyApp = ({ Component, pageProps }) => {
         <Container>
           <DefaultSeo config={DEFAULT_SEO} />
           <Head title="APBEB | Asociación de profesionales de bodas y eventos de Baleares" />
+          <CookieConsent
+            location="bottom"
+            buttonText="Acepto"
+            cookieName="apbeb"
+            style={{ background: '#925D56' }}
+            buttonStyle={{ background: '#F8F4F1', color: '#4e503b', fontSize: '13px' }}
+            expires={150}
+          >
+            Con su consentimiento, usamos cookies o tecnologías similares para almacenar, acceder y procesar datos personales como su visita en este sitio web.
+          </CookieConsent>
             <ThemeProvider theme={theme}>
               <CssBaseline />
               <TransitionPage active={animationStatus} />

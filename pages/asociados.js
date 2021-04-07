@@ -63,10 +63,6 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
     width: '100%',
-    // display: 'flex',
-    // justifyContent: 'center',
-    // alignItems: 'flex-start',
-    // flexWrap: 'wrap',
     margin: '0 auto',
     marginTop: '8%'
   },
@@ -136,7 +132,6 @@ const Asociados = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // Authenticate the request
         Authorization: 'Bearer x9CPBjC_GvM4zAEhjlKBvYr_zZYZgutVodm0_H5wVcQ'
       },
       // send the GraphQL query
@@ -176,11 +171,10 @@ const Asociados = () => {
                       <AntTab label="Decoración & Florista" icon={<WeddingIcon icono="decoracion"/>} {...a11yProps(2)} />
                       <AntTab label="Mobiliario & Menaje" icon={<WeddingIcon icono="mobiliario"/>} {...a11yProps(3)} />
                       <AntTab label="Localizaciones" icon={<WeddingIcon icono="localizaciones"/>} {...a11yProps(4)} />
-                      <AntTab label="Sonido & Iluminación" icon={<WeddingIcon icono="sonido"/>} {...a11yProps(5)} />
+                      <AntTab label="Audiovisuales y espectáculos" icon={<WeddingIcon icono="sonido"/>} {...a11yProps(5)} />
                       <AntTab label="Wedding Planners" icon={<WeddingIcon icono="planner"/>} {...a11yProps(7)} />
                       <AntTab label="Imagen" icon={<WeddingIcon icono="imagen"/>} {...a11yProps(8)} />
-                      <AntTab label="Animación" icon={<WeddingIcon icono="animacion"/>} {...a11yProps(9)} />
-                      <AntTab label="Transporte" icon={<WeddingIcon icono="bus"/>} {...a11yProps(10)} />
+                      <AntTab label="Transporte" icon={<WeddingIcon icono="bus"/>} {...a11yProps(9)} />
                     </AntTabs>
                   </div>
                   <TabPanel value={value} index={0}>
@@ -256,15 +250,6 @@ const Asociados = () => {
                   </div>
                   </TabPanel>
                   <TabPanel value={value} index={8}>
-                  <div className={classes.asociados}>
-                  {
-                    asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'animacion').map((asociado, i) => (
-                      <Asociado key={i} image={asociado?.image?.url} desc={asociado?.description} url={asociado.url}/>
-                    ))
-                  }
-                  </div>
-                  </TabPanel>
-                  <TabPanel value={value} index={9}>
                   <div className={classes.asociados}>
                   {
                     asociados?.data?.asociadoCollection?.items?.filter(asociado => asociado.category === 'transporte').map((asociado, i) => (

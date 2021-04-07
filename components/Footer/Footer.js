@@ -32,6 +32,28 @@ const useStyles = makeStyles(theme => ({
       marginBottom: '5%'
     }
   },
+  legalLink: {
+    width: '200px',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    cursor: 'pointer',
+    [theme.breakpoints.down('sm')]: {
+      fontWeight: '400',
+      width: 'auto',
+      marginRight: '10px'
+    }
+  },
+  legal: {
+    width: '35%',
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexWrap: 'wrap',
+      width: '100%'
+    }
+  },
   footerItem: {
     cursor: 'pointer',
     [theme.breakpoints.down('sm')]: {
@@ -43,6 +65,13 @@ const useStyles = makeStyles(theme => ({
 const Footer = ({ navRef, handleAnimation }) => {
   const classes = useStyles()
   const router = useRouter()
+
+  const handleLink = (path) => {
+    document.body.scrollTop = 0
+    router.push({
+      pathname: path
+    })
+  }
 
   return (
         <div className={classes.root}>
@@ -56,8 +85,13 @@ const Footer = ({ navRef, handleAnimation }) => {
           <a href="http://www.mallorcaprotecciondedatos.eu">
             <img className={classes.icon} src={'/static/images/datos.png'}/>
           </a>
-          <Typography variant="subtitle1" className={classes.mb}>Copyright APBEB</Typography>
-          <Typography variant="subtitle1" className={classes.mb}>Diseñado y programado por Enalbis</Typography>
+          <Typography variant="subtitle1" >Copyright <b>APBEB</b></Typography>
+          <Typography variant="subtitle1" className={classes.mb}>Diseñado y programado por <b>Enalbis</b></Typography>
+          <div className={classes.legal}>
+            <Typography onClick={() => handleLink('/aviso-legal')} variant="subtitle1" className={classes.legalLink}>Aviso legal</Typography>
+            <Typography onClick={() => handleLink('/politica-cookies')} variant="subtitle1" className={classes.legalLink}>Política de cookies</Typography>
+            <Typography onClick={() => handleLink('/politica-privacidad')} variant="subtitle1" className={classes.legalLink}>Política de privacidad</Typography>
+          </div>
         </div>
   )
 }

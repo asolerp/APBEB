@@ -15,6 +15,9 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'flex-end'
   },
+  liStyle: {
+    listStyle: 'none'
+  },
   menuSection: {
     fontFamily: 'Boowie',
     position: 'relative',
@@ -40,32 +43,32 @@ const Menu = ({ handleAnimation, navRef }) => {
 
   return (
     <ul className={classes.root}>
-      <li>
+      <li className={classes.liStyle}>
         <Box mr={3}>
           <Typography onClick={() => handleClick('/about', handleAnimation, router, navRef)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/about') ? classes.menuSectionActive : ''}`}>Quienes somos</Typography>
         </Box>
       </li>
-      <li>
+      <li className={classes.liStyle}>
         <Box mr={3}>
           <Typography onClick={() => handleClick('/beneficios', handleAnimation, router, navRef)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/beneficios') ? classes.menuSectionActive : ''}`}>Beneficios</Typography>
         </Box>
       </li>
-      <li>
+      <li className={classes.liStyle}>
         <Box mr={3}>
           <Typography onClick={() => handleClick('/profesionales', handleAnimation, router, navRef)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/profesionales') ? classes.menuSectionActive : ''}`}>Junta Directiva</Typography>
         </Box>
       </li>
-      <li>
+      <li className={classes.liStyle}>
         <Box mr={3}>
           <Typography onClick={() => handleClick('/asociados', handleAnimation, router, navRef)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/asociados') ? classes.menuSectionActive : ''}`}>Asociados</Typography>
         </Box>
       </li>
-      <li>
+      <li className={classes.liStyle}>
         <Box mr={3}>
           <Typography onClick={() => handleClick('/noticias', handleAnimation, router, navRef)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/noticias') ? classes.menuSectionActive : ''}`}>Noticias</Typography>
         </Box>
       </li>
-      <li>
+      <li className={classes.liStyle}>
         <Box>
           <Typography onClick={() => handleClick('/contacto', handleAnimation, router, navRef)} variant="h6" className={`${classes.menuSection} ${isActive(router, '/contacto') ? classes.menuSectionActive : ''}`}>Contacta</Typography>
         </Box>
