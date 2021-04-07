@@ -39,13 +39,19 @@ const Social = ({ footer }) => {
   return (
     <ul className={classes.root}>
       <li>
-        <img src="static/images/instagram.png" className={`${classes.socialIcon} ${footer ? classes.socialFooter : ''}`} />
+        <a href="https://instagram.com/apbeb">
+          <img src="static/images/instagram.png" className={`${classes.socialIcon} ${footer ? classes.socialFooter : ''}`} />
+        </a>
       </li>
       <li>
-        <img src="static/images/facebook.png" className={`${classes.socialIcon} ${footer ? classes.socialFooter : ''}`} />
+        <a href="https://www.facebook.com/asociacionbodasyeventosbaleares">
+         <img src="static/images/facebook.png" className={`${classes.socialIcon} ${footer ? classes.socialFooter : ''}`} />
+        </a>
       </li>
       <li>
-        <img src="static/images/twitter.png" className={`${classes.socialIcon} ${footer ? classes.socialIconLinkedinFooter : ''}`}/>
+      <a href="https://www.twitter.com/apbe_b">
+          <img src="static/images/twitter.png" className={`${classes.socialIcon} ${footer ? classes.socialIconLinkedinFooter : ''}`}/>
+        </a>
       </li>
     </ul>
   )

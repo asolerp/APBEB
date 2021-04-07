@@ -171,7 +171,7 @@ const Asociados = () => {
                       textColor="primary"
                       aria-label="scrollable force tabs example"
                     >
-                      <AntTab label="Moda" icon={<WeddingIcon icono="moda"/>} {...a11yProps(0)} />
+                      <AntTab label="Moda & Estilismo" icon={<WeddingIcon icono="moda"/>} {...a11yProps(0)} />
                       <AntTab label="Catering & Repostería" icon={<WeddingIcon icono="catering"/>} {...a11yProps(1)} />
                       <AntTab label="Decoración & Florista" icon={<WeddingIcon icono="decoracion"/>} {...a11yProps(2)} />
                       <AntTab label="Mobiliario & Menaje" icon={<WeddingIcon icono="mobiliario"/>} {...a11yProps(3)} />

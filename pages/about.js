@@ -150,6 +150,11 @@ const About = ({ t }) => {
               </li>
               <li className={classes.listItems}>
                 <Typography variant="subtitle1" >
+                  {t('about.list.i6')}
+                </Typography>
+              </li>
+              <li className={classes.listItems}>
+                <Typography variant="subtitle1" >
                   {t('about.list.i7')}
                 </Typography>
               </li>

@@ -53,7 +53,6 @@ const Footer = ({ navRef, handleAnimation }) => {
           <Typography onClick={() => handleClick('/noticias', handleAnimation, router, navRef)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Noticias</Typography>
           <Typography onClick={() => handleClick('/contacto', handleAnimation, router, navRef)} variant="subtitle1" className={`${classes.footerItem} ${classes.mb}`}>Contacto</Typography>
           <Social footer={true}/>
-          <Typography variant="subtitle1" className={classes.mb}>Nuestros colaboradores</Typography>
           <a href="http://www.mallorcaprotecciondedatos.eu">
             <img className={classes.icon} src={'/static/images/datos.png'}/>
           </a>
