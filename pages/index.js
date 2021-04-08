@@ -107,7 +107,7 @@ const Home = ({ t }) => {
         <div className={classes.homeLeft}>
           <Typography variant="h1" className={classes.title}>{t('home.title')}</Typography>
           {
-            !mobile && <Social footer={true}/>
+            !mobile && <Social footer={true} mainPage={true}/>
           }
         </div>
         <div className={classes.homeRight}>

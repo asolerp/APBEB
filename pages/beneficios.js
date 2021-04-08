@@ -157,7 +157,6 @@ const Beneficios = ({ t }) => {
               </li>
           </ul>
       </div>
-      <AsociateBanner />
     </div>
   )
 }

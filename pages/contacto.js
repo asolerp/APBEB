@@ -6,9 +6,7 @@ import { withTranslation } from '../i18n'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
-import Quote from '../components/Quote'
 import Form from '../components/Form'
-import AsociateBanner from '../components/AsociateBanner/AsociateBanner'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -99,7 +97,6 @@ const Contacto = ({ t }) => {
           <Form />
         </div>
       </div>
-      <AsociateBanner />
     </div>
   )
 }

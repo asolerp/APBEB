@@ -29,6 +29,7 @@ import Footer from '../components/Footer'
 import TransitionPage from '../components/TransitionPage'
 import MobileMenu from '../components/MobileMenu'
 import CookieConsent from 'react-cookie-consent'
+import AsociateBanner from '../components/AsociateBanner/AsociateBanner'
 
 const theme = createMuiTheme({
   typography: {
@@ -101,6 +102,7 @@ const MyApp = ({ Component, pageProps }) => {
                 <div className="content">
                   <Component {...pageProps} />
                 </div>
+                <AsociateBanner />
                 <div className="footer">
                   <Footer navRef={navRef} handleAnimation={setAnimationStatus}/>
                 </div>

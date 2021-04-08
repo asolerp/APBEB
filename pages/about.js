@@ -202,7 +202,7 @@ const About = ({ t }) => {
         <div className={classes.homeRight}>
         </div>
       </div>
-      <AsociateBanner />
+      {/* <AsociateBanner /> */}
     </div>
   )
 }

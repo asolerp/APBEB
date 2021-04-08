@@ -5,8 +5,6 @@ const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
     flexGrow: 1,
-    width: '10%',
-    padding: 0,
     justifyContent: 'space-between',
     alignItems: 'center',
     marginTop: '3%',
@@ -40,23 +38,31 @@ const useStyles = makeStyles(theme => ({
 
 }))
 
-const Social = ({ footer }) => {
+const Social = ({ footer, mainPage }) => {
   const classes = useStyles()
   return (
-    <ul className={classes.container}>
+    <ul
+    style={{ width: mainPage ? 'auto' : '10%', padding: !mainPage && '0' }}
+    className={classes.container}>
       <li className={classes.liStyle}>
         <a href="https://instagram.com/apbeb">
-          <img src="static/images/instagram.png" className={`${classes.socialIcon} ${footer ? classes.socialFooter : ''}`} />
+          <img src="static/images/instagram.png"
+          style={{ marginRight: mainPage ? '1rem' : '0rem' }}
+          className={`${classes.socialIcon} ${footer ? classes.socialFooter : ''}`} />
         </a>
       </li>
       <li className={classes.liStyle}>
         <a href="https://www.facebook.com/asociacionbodasyeventosbaleares">
-         <img src="static/images/facebook.png" className={`${classes.socialIcon} ${footer ? classes.socialFooter : ''}`} />
+         <img
+          style={{ marginRight: mainPage ? '1rem' : '0rem' }}
+         src="static/images/facebook.png" className={`${classes.socialIcon} ${footer ? classes.socialFooter : ''}`} />
         </a>
       </li>
       <li className={classes.liStyle}>
       <a href="https://www.twitter.com/apbe_b">
-          <img src="static/images/twitter.png" className={`${classes.socialIcon} ${footer ? classes.socialIconLinkedinFooter : ''}`}/>
+          <img
+          style={{ marginRight: mainPage ? '1rem' : '0rem' }}
+          src="static/images/twitter.png" className={`${classes.socialIcon} ${footer ? classes.socialIconLinkedinFooter : ''}`}/>
         </a>
       </li>
     </ul>

@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useRouter } from 'next/router'
 
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
-import Link from 'next/link'
 
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
@@ -15,7 +15,6 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
     width: '100%',
     height: 'auto',
-    marginBottom: '5%',
     background: theme.palette.info.main,
     [theme.breakpoints.down('sm')]: {
       marginTop: '5%',
@@ -48,6 +47,14 @@ const useStyles = makeStyles(theme => ({
 const AsociateBanner = () => {
   const classes = useStyles()
   const mobile = useMediaQuery(theme => theme.breakpoints.down('md'))
+
+  const router = useRouter()
+
+  console.log(router)
+
+  if (router.pathname === '/' || router.pathname === '/noticias') {
+    return null
+  }
 
   return (
           <div className={classes.root}>
