@@ -39,7 +39,13 @@ const useStyles = makeStyles(theme => ({
     }
   },
   backIcon: {
-    marginBottom: '5%'
+    marginBottom: '5%',
+    cursor: 'pointer',
+    '&:hover': {
+      color: 'white',
+      backgroundColor: theme.palette.info.main,
+      borderRadius: 100
+    }
   },
   subtitle: {
     color: 'grey',
@@ -122,7 +128,7 @@ const NoticiaPage = (props) => {
               </Typography>
               {
                 parsedNoticia.iframe && (
-                  <div className="embed-container">
+                  <div style={{ marginBottom: '8%' }} className="embed-container">
                     { parse(parsedNoticia.iframe)}
                   </div>
                 )

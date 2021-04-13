@@ -24,6 +24,7 @@ const useStyles = makeStyles(theme => ({
   },
   subtitle: {
     color: 'grey',
+    fontSize: '1rem',
     marginBottom: '2%',
     [theme.breakpoints.down('sm')]: {
       fontSize: '1rem'

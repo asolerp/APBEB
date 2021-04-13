@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
 import { useQuery } from 'react-query'
-import { Link, Element } from 'react-scroll'
 
 import { withTranslation } from '../../i18n'
 
@@ -9,10 +8,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
 import Noticia from '../../components/Noticia/Noticia'
-import Quote from '../../components/Quote/Quote'
 
 import { query } from '../../queries/noticias'
-import { Divide } from 'hamburger-react'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -61,6 +58,12 @@ const useStyles = makeStyles(theme => ({
   entradasMonth: {
     color: 'grey',
     marginBottom: '2%',
+    fontSize: '1rem',
+    cursor: 'pointer',
+    '&:hover': {
+      color: theme.palette.info.main,
+      fontWeight: 'bold'
+    },
     [theme.breakpoints.down('sm')]: {
       fontSize: '1rem'
     }
