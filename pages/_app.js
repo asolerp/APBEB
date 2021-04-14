@@ -76,7 +76,7 @@ const MyApp = ({ Component, pageProps }) => {
   return (
     <QueryClientProvider client={queryClient}>
       <MenuContext.Provider value={menu}>
-        <Container>
+        <>
           <DefaultSeo config={DEFAULT_SEO} />
           <Head title="APBEB | Asociación de profesionales de bodas y eventos de Baleares" />
           <CookieConsent
@@ -108,7 +108,7 @@ const MyApp = ({ Component, pageProps }) => {
                 </div>
               </div>
             </ThemeProvider>
-        </Container>
+        </>
       </MenuContext.Provider>
     </QueryClientProvider>
   )

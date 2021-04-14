@@ -95,8 +95,6 @@ const Noticias = () => {
     )
   )
 
-  console.log(noticias)
-
   const srollToNews = (slug) => {
     const element = document.getElementById(slug)
     element.scrollIntoView({

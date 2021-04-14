@@ -111,7 +111,6 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const About = ({ t }) => {
-  Object.keys(t('about.list')).map(element => console.log(element))
   const classes = useStyles()
   return (
     <div className={classes.root}>

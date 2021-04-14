@@ -42,8 +42,7 @@ const Form = () => {
   const onSubmit = async (data) => {
     setLoading(true)
     try {
-      const result = await sendForm('service_se5sv0g', 'template_xgbh9pj', '#contact-form')
-      console.log(result)
+      await sendForm('service_se5sv0g', 'template_xgbh9pj', '#contact-form')
     } catch (err) {
       console.log(err)
     } finally {

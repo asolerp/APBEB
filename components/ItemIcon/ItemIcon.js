@@ -22,7 +22,6 @@ const ItemIcon = ({ icon, title }) => {
 
   return (
         <div className={classes.root} onClick={() => {
-          console.log('icon')
           scroll.scrollToTop()
         }}>
             {icon}

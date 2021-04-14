@@ -8,11 +8,7 @@ import { Typography } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    display: 'flex',
     width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexWrap: 'wrap',
     margin: '0 auto',
     marginTop: '8%',
     marginBottom: '8%',
@@ -44,12 +40,12 @@ const Privacidad = () => {
     )
   )
 
-  console.log(legal)
-
   return (
         <div className={classes.root}>
           {
-            legal && documentToReactComponents(legal?.data?.legalCollection?.items[0].content.json)
+            <Typography variant="h6" className={classes.description}>
+              {legal && documentToReactComponents(legal?.data?.legalCollection?.items[0].content.json)}
+            </Typography>
           }
         </div>
   )

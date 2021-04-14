@@ -107,10 +107,6 @@ const NoticiaPage = (props) => {
 
   const parsedNoticia = JSON.parse(noticia)
 
-  console.log(documentToReactComponents(parsedNoticia.content.json))
-
-  console.log(parsedNoticia)
-
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])

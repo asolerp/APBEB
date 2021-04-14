@@ -44,12 +44,12 @@ const Cookies = () => {
     )
   )
 
-  console.log(legal)
-
   return (
         <div className={classes.root}>
           {
-            legal && documentToReactComponents(legal?.data?.legalCollection?.items[0].content.json)
+            <Typography variant="h6" className={classes.description}>
+              {legal && documentToReactComponents(legal?.data?.legalCollection?.items[0].content.json)}
+            </Typography>
           }
         </div>
   )

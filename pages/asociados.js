@@ -141,8 +141,6 @@ const Asociados = () => {
     )
   )
 
-  console.log(asociados)
-
   const WeddingIcon = ({ icono }) => {
     return (
       <img className={classes.icon} src={`/static/icons/${icono}.png`}/>

@@ -50,8 +50,6 @@ const AsociateBanner = () => {
 
   const router = useRouter()
 
-  console.log(router)
-
   if (router.pathname === '/' || router.pathname === '/noticias') {
     return null
   }
