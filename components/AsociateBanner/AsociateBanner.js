@@ -57,7 +57,7 @@ const AsociateBanner = () => {
   return (
           <div className={classes.root}>
               <Typography variant={mobile ? 'h4' : 'h2'} className={classes.title}> Asóciate </Typography>
-              <Typography variant={mobile ? 'subtitle' : 'h6'} className={classes.info}> ¡Con una cuota anual de 75€ podrás empezar a disfrutar de nuestras ventajas! </Typography>
+              <Typography variant={mobile ? 'subtitle' : 'h6'} className={classes.info}> ¡Con una cuota anual de 80€ podrás empezar a disfrutar de nuestras ventajas! </Typography>
               <a href="https://hola036707.typeform.com/to/Dt4dCyjY" className={classes.link}>Ir al formulario!</a>
           </div>
   )
