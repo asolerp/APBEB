@@ -7,7 +7,6 @@ import Profesional from '../components/Profesional'
 import Quote from '../components/Quote/Quote'
 
 import { query } from '../queries/profesionales'
-import { Typography } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,13 +21,14 @@ const useStyles = makeStyles(theme => ({
   },
   asociados: {
     display: 'flex',
-    width: '50%',
-    justifyContent: 'space-around',
+    width: '80%',
+    justifyContent: 'space-evenly',
     alignItems: 'flex-start',
     flexWrap: 'wrap',
     margin: '0 auto',
     [theme.breakpoints.down('sm')]: {
-      width: '100%'
+      width: '100%',
+      justifyContent: 'space-around'
     }
   },
   avatar: {
@@ -56,18 +56,6 @@ const Profesionales = () => {
       res.json()
     )
   )
-
-  // if (isLoading) {
-  //   return (
-  //     <Typography variant="h6">Cargando...</Typography>
-  //   )
-  // }
-
-  // if (error) {
-  //   return (
-  //     <Typography variant="h6">Ha ocurrido un error</Typography>
-  //   )
-  // }
 
   return (
         <div className={classes.root}>

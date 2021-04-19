@@ -7,31 +7,41 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    maxWidth: '300px',
+    maxWidth: '400px',
     marginBottom: '10%',
     [theme.breakpoints.down('sm')]: {
-      marginBottom: '20%'
+      marginBottom: '20%',
+      maxWidth: '300px'
+
     },
     [`${theme.breakpoints.down('md')} and (orientation: landscape)`]: {
       marginBottom: '10%'
     }
   },
   avatarWrapper: {
-    width: '200px',
-    height: '200px',
+    width: '300px',
+    height: '300px',
     borderRadius: '50%',
     background: theme.palette.primary.main,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: '5%'
+    marginBottom: '5%',
+    [theme.breakpoints.down('sm')]: {
+      width: '200px',
+      height: '200px'
+    }
   },
   avatar: {
-    width: '185px',
-    height: '185px',
+    width: '285px',
+    height: '285px',
     borderRadius: '50%',
     backgroundSize: 'cover',
-    backgroundImage: 'url(\'/static/images/avatar.jpg\')'
+    backgroundImage: 'url(\'/static/images/avatar.jpg\')',
+    [theme.breakpoints.down('sm')]: {
+      width: '185px',
+      height: '185px'
+    }
   },
   name: {
     textAlign: 'center',
