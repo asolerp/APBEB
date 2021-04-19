@@ -86,7 +86,7 @@ const Noticias = () => {
       headers: {
         'Content-Type': 'application/json',
         // Authenticate the request
-        Authorization: 'Bearer x9CPBjC_GvM4zAEhjlKBvYr_zZYZgutVodm0_H5wVcQ'
+        Authorization: `Bearer ${process.env.CONTENFUL_API}`
       },
       // send the GraphQL query
       body: JSON.stringify({ query })

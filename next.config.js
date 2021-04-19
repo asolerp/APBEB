@@ -10,9 +10,12 @@ module.exports = withImages({
   experimental: {
     reactRefresh: true
   },
-  target: "serverless",
+  env: {
+    CONTENFUL_API: process.env.CONTENFUL_API
+  },
+  target: 'serverless',
   rewrites: async () => nextI18NextRewrites(localeSubpaths),
   publicRuntimeConfig: {
-    localeSubpaths,
-  },
+    localeSubpaths
+  }
 })

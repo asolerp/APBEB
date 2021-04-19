@@ -29,13 +29,15 @@ const useStyles = makeStyles(theme => ({
 const Cookies = () => {
   const classes = useStyles()
 
+  console.log(process)
+
   const { data: legal } = useQuery('repoData', () =>
     fetch('https://graphql.contentful.com/content/v1/spaces/7d2nsmhsonde/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         // Authenticate the request
-        Authorization: 'Bearer x9CPBjC_GvM4zAEhjlKBvYr_zZYZgutVodm0_H5wVcQ'
+        Authorization: `Bearer ${process.env.CONTENFUL_API}`
       },
       // send the GraphQL query
       body: JSON.stringify({ query })
@@ -53,6 +55,10 @@ const Cookies = () => {
           }
         </div>
   )
+}
+
+Cookies.getStaticProps = () => {
+
 }
 
 export default withTranslation('common')(Cookies)

@@ -132,7 +132,7 @@ const Asociados = () => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'Bearer x9CPBjC_GvM4zAEhjlKBvYr_zZYZgutVodm0_H5wVcQ'
+        Authorization: `Bearer ${process.env.CONTENFUL_API}`
       },
       // send the GraphQL query
       body: JSON.stringify({ query })
